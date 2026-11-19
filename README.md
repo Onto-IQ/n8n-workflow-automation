@@ -38,26 +38,26 @@
 |---|--------|--------|----------|-------|
 | 01 | n8n คืออะไร (+ rebrand 2026) | [01-what-is-n8n](lessons/01-what-is-n8n/) | [exercise](exercises/01-what-is-n8n/) | 45 |
 | 02 | เริ่มต้น Workflow แรก | [02-first-workflow](lessons/02-first-workflow/) | [exercise](exercises/02-first-workflow/) | 40 |
-| 03 | JSON พื้นฐาน | [03-json-basics](lessons/03-json-basics/) | [exercise](exercises/03-json-basics/) | 60 |
-| 04 | Flow Control (IF/Switch/Merge) | [04-flow-control](lessons/04-flow-control/) | [exercise](exercises/04-flow-control/) | 45 |
-| 05 | Loop | [05-loops](lessons/05-loops/) | [exercise](exercises/05-loops/) | 45 |
-| 06 | Data Transformation | [06-data-transformation](lessons/06-data-transformation/) | [exercise](exercises/06-data-transformation/) | 40 |
-| 07 | External APIs | [07-external-apis](lessons/07-external-apis/) | [exercise](exercises/07-external-apis/) | 40 |
-| 08 | Webhooks & Triggers | [08-webhooks](lessons/08-webhooks/) | [exercise](exercises/08-webhooks/) | 40 |
-| 09 | Credential Google Workspace | [09-google-workspace-credential](lessons/09-google-workspace-credential/) | [exercise](exercises/09-google-workspace-credential/) | 60 |
-| 10 | Workshop #1: ฟอร์ม → Workspace + LINE | [10-workshop-form-to-workspace-line](lessons/10-workshop-form-to-workspace-line/) | [exercise](exercises/10-workshop-form-to-workspace-line/) | 90 |
-| 11 | Credential LINE OA | [11-line-oa-credential](lessons/11-line-oa-credential/) | [exercise](exercises/11-line-oa-credential/) | 45 |
-| 12 | สถานการณ์ LLM ปี 2026 | [12-llm-landscape](lessons/12-llm-landscape/) | [exercise](exercises/12-llm-landscape/) | 40 |
-| 13 | Workshop #2: คัดกรองใบสมัครจาก Gmail | [13-workshop-candidate-screening](lessons/13-workshop-candidate-screening/) | [exercise](exercises/13-workshop-candidate-screening/) | 90 |
-| 14 | Credential Google AI (Gemini) | [14-google-ai-credential](lessons/14-google-ai-credential/) | [exercise](exercises/14-google-ai-credential/) | 30 |
-| 15 | Credential OpenAI | [15-openai-credential](lessons/15-openai-credential/) | [exercise](exercises/15-openai-credential/) | 30 |
-| 16 | Credential OpenRouter | [16-openrouter-credential](lessons/16-openrouter-credential/) | [exercise](exercises/16-openrouter-credential/) | 30 |
-| 17 | AI Agent คืออะไร | [17-ai-agents-concepts](lessons/17-ai-agents-concepts/) | [exercise](exercises/17-ai-agents-concepts/) | 40 |
-| 18 | Chat Agent + Memory | [18-chat-agent-memory](lessons/18-chat-agent-memory/) | [exercise](exercises/18-chat-agent-memory/) | 45 |
-| 19 | Agent + Tools (Function Calling) | [19-agent-with-tools](lessons/19-agent-with-tools/) | [exercise](exercises/19-agent-with-tools/) | 45 |
+| 03 | JSON พื้นฐาน | [10-json-basics](lessons/10-json-basics/) | [exercise](exercises/10-json-basics/) | 60 |
+| 04 | Flow Control (IF/Switch/Merge) | [12-flow-control](lessons/12-flow-control/) | [exercise](exercises/12-flow-control/) | 45 |
+| 05 | Loop | [13-loops](lessons/13-loops/) | [exercise](exercises/13-loops/) | 45 |
+| 06 | Data Transformation | [11-data-transformation](lessons/11-data-transformation/) | [exercise](exercises/11-data-transformation/) | 40 |
+| 07 | External APIs | [14-external-apis](lessons/14-external-apis/) | [exercise](exercises/14-external-apis/) | 40 |
+| 08 | Webhooks & Triggers | [15-webhooks](lessons/15-webhooks/) | [exercise](exercises/15-webhooks/) | 40 |
+| 09 | Credential Google Workspace | [16-google-workspace-credential](lessons/16-google-workspace-credential/) | [exercise](exercises/16-google-workspace-credential/) | 60 |
+| 10 | Workshop #1: ฟอร์ม → Workspace + LINE | [19-workshop-form-to-workspace-line](lessons/19-workshop-form-to-workspace-line/) | [exercise](exercises/19-workshop-form-to-workspace-line/) | 90 |
+| 11 | Credential LINE OA | [18-line-oa-credential](lessons/18-line-oa-credential/) | [exercise](exercises/18-line-oa-credential/) | 45 |
+| 12 | สถานการณ์ LLM ปี 2026 | [03-llm-landscape](lessons/03-llm-landscape/) | [exercise](exercises/03-llm-landscape/) | 40 |
+| 13 | Workshop #2: คัดกรองใบสมัครจาก Gmail | [17-workshop-candidate-screening](lessons/17-workshop-candidate-screening/) | [exercise](exercises/17-workshop-candidate-screening/) | 90 |
+| 14 | Credential Google AI (Gemini) | [04-google-ai-credential](lessons/04-google-ai-credential/) | [exercise](exercises/04-google-ai-credential/) | 30 |
+| 15 | Credential OpenAI | [05-openai-credential](lessons/05-openai-credential/) | [exercise](exercises/05-openai-credential/) | 30 |
+| 16 | Credential OpenRouter | [06-openrouter-credential](lessons/06-openrouter-credential/) | [exercise](exercises/06-openrouter-credential/) | 30 |
+| 17 | AI Agent คืออะไร | [07-ai-agents-concepts](lessons/07-ai-agents-concepts/) | [exercise](exercises/07-ai-agents-concepts/) | 40 |
+| 18 | Chat Agent + Memory | [08-chat-agent-memory](lessons/08-chat-agent-memory/) | [exercise](exercises/08-chat-agent-memory/) | 45 |
+| 19 | Agent + Tools (Function Calling) | [09-agent-with-tools](lessons/09-agent-with-tools/) | [exercise](exercises/09-agent-with-tools/) | 45 |
 | 20 | Simple RAG + Memory | [20-simple-rag-memory](lessons/20-simple-rag-memory/) | [exercise](exercises/20-simple-rag-memory/) | 60 |
-| 21 | MCP Client & Server | [21-mcp-client-server](lessons/21-mcp-client-server/) | [exercise](exercises/21-mcp-client-server/) | 60 |
-| 22 | Workshop #3: RAG ด้วย Pinecone | [22-workshop-rag-pinecone](lessons/22-workshop-rag-pinecone/) | [exercise](exercises/22-workshop-rag-pinecone/) | 90 |
+| 21 | MCP Client & Server | [22-mcp-client-server](lessons/22-mcp-client-server/) | [exercise](exercises/22-mcp-client-server/) | 60 |
+| 22 | Workshop #3: RAG ด้วย Pinecone | [21-workshop-rag-pinecone](lessons/21-workshop-rag-pinecone/) | [exercise](exercises/21-workshop-rag-pinecone/) | 90 |
 | 23 | Multi-Agents (Linear vs Orchestration) | [23-multi-agents](lessons/23-multi-agents/) | [exercise](exercises/23-multi-agents/) | 90 |
 | 24 | Bonus: สร้าง Flow ด้วย Agentic IDE | [24-agentic-ide-bonus](lessons/24-agentic-ide-bonus/) | [exercise](exercises/24-agentic-ide-bonus/) | 60 |
 | 25 | Self-Hosting n8n (Docker + Cloudflare) | [25-self-hosting](lessons/25-self-hosting/) | [exercise](exercises/25-self-hosting/) | 90 |
