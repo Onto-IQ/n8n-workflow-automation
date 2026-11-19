@@ -1,272 +1,142 @@
-# 🎓 n8n Student Self-Host - คู่มือสำหรับนักเรียน
+# Workflow Automation with n8n — L1 (Onto-IQ)
 
-โปรเจกต์นี้รวมทั้ง **ระบบติดตั้ง n8n แบบ Self-Host** และ **ชุด Workflow สำหรับการเรียนการสอน** ตั้งแต่พื้นฐานจนถึงระดับสูง
+หลักสูตรอบรม **Automation ด้วย n8n ตั้งแต่เริ่มต้นจนถึง AI Agents** — เรียนแบบทำตามมือ (hands-on) ทีละหน่วย (unit) โดยเนื้อหาอิง slide deck ประกอบการสอน (271 หน้า) และอัปเดตให้ตรงกับ **n8n 2.x + Brand Refresh ปี 2026**
 
-## 📂 โครงสร้างโปรเจกต์
+> จัดโดย Onto-IQ · ภาษาไทยอธิบาย + คำสั่ง/เครื่องมือเป็นอังกฤษ
 
+## 1. Overview
+
+คอร์สนี้ครอบคลุมตั้งแต่การสร้าง workflow แรก การจัดการข้อมูล JSON การต่อ Google Workspace / LINE ไปจนถึงการสร้าง AI Agents (memory, tools, RAG, MCP, multi-agents) และการ self-host n8n ด้วย Docker + Cloudflare Tunnel
+
+ผู้เรียนจะได้:
+
+- สร้าง automation ของตัวเองบน n8n canvas ได้ตั้งแต่วันแรก
+- ต่อบริการจริง (Gmail, Sheets, Calendar, Docs, Drive, LINE, OpenAI, Gemini, OpenRouter, Pinecone)
+- สร้าง AI Agent ที่มี memory ใช้ tools และตอบจากเอกสารองค์กร (RAG) ได้
+- เข้าใจสิ่งใหม่สำคัญของ n8n ยุค 2.x และ rebrand 2026 (Agent-first) — สรุปใน [n8n 2026 rebrand & 2.x notes](other/reference/n8n-2026-rebrand-and-2x.md)
+- เปิดให้ AI อื่นใช้เครื่องมือของเราผ่าน MCP และสร้าง workflow ด้วย agentic IDE
+
+## 2. Audience / กลุ่มเป้าหมาย
+
+**เหมาะกับ:** ผู้ไม่เคยใช้ n8n มาก่อน, พนักงานออฟฟิศที่อยากทำ automation, นักพัฒนาที่อยากใช้ low-code ต่อ AI, ทีม IT/HR/Marketing
+
+**ไม่เหมาะกับ:** ผู้ต้องการสอนการเขียนโปรแกรมเชิงลึก (คอร์สนี้ใช้ JS/Python เพียงเล็กน้อยใน Code node)
+
+## 3. Prerequisites / สิ่งที่ต้องเตรียม
+
+ดูรายละเอียดและคำสั่งตรวจสอบทั้งหมดใน [SETUP.md](SETUP.md)
+
+- **ความรู้:** ใช้คอมพิวเตอร์/เบราว์เซอร์เป็น, มีความเข้าใจ JSON เบื้องต้นจะสบายขึ้น (สอนซ้ำใน unit 03)
+- **ซอฟต์แวร์/บัญชี:** บัญชี Google, LINE, Docker Desktop, โดเมนของตัวเอง + Cloudflare (สำหรับ self-host), คีย์ AI (เราสร้างระหว่างเรียน)
+- **ฮาร์ดแวร์:** เครื่อง Windows/macOS RAM ≥ 8 GB สำหรับรัน Docker
+
+## 4. Lesson outline / หัวข้อการเรียน
+
+เรียนตามลำดับ 25 หน่วย — ทุกหน่วยมี lesson (ทฤษฎี) และ exercise (ลงมือทำ) แยกโฟลเดอร์กัน
+
+| # | หัวข้อ | Lesson | Exercise | ~นาที |
+|---|--------|--------|----------|-------|
+| 01 | n8n คืออะไร (+ rebrand 2026) | [01-what-is-n8n](lessons/01-what-is-n8n/) | [exercise](exercises/01-what-is-n8n/) | 45 |
+| 02 | เริ่มต้น Workflow แรก | [02-first-workflow](lessons/02-first-workflow/) | [exercise](exercises/02-first-workflow/) | 40 |
+| 03 | JSON พื้นฐาน | [03-json-basics](lessons/03-json-basics/) | [exercise](exercises/03-json-basics/) | 60 |
+| 04 | Flow Control (IF/Switch/Merge) | [04-flow-control](lessons/04-flow-control/) | [exercise](exercises/04-flow-control/) | 45 |
+| 05 | Loop | [05-loops](lessons/05-loops/) | [exercise](exercises/05-loops/) | 45 |
+| 06 | Data Transformation | [06-data-transformation](lessons/06-data-transformation/) | [exercise](exercises/06-data-transformation/) | 40 |
+| 07 | External APIs | [07-external-apis](lessons/07-external-apis/) | [exercise](exercises/07-external-apis/) | 40 |
+| 08 | Webhooks & Triggers | [08-webhooks](lessons/08-webhooks/) | [exercise](exercises/08-webhooks/) | 40 |
+| 09 | Credential Google Workspace | [09-google-workspace-credential](lessons/09-google-workspace-credential/) | [exercise](exercises/09-google-workspace-credential/) | 60 |
+| 10 | Workshop #1: ฟอร์ม → Workspace + LINE | [10-workshop-form-to-workspace-line](lessons/10-workshop-form-to-workspace-line/) | [exercise](exercises/10-workshop-form-to-workspace-line/) | 90 |
+| 11 | Credential LINE OA | [11-line-oa-credential](lessons/11-line-oa-credential/) | [exercise](exercises/11-line-oa-credential/) | 45 |
+| 12 | สถานการณ์ LLM ปี 2026 | [12-llm-landscape](lessons/12-llm-landscape/) | [exercise](exercises/12-llm-landscape/) | 40 |
+| 13 | Workshop #2: คัดกรองใบสมัครจาก Gmail | [13-workshop-candidate-screening](lessons/13-workshop-candidate-screening/) | [exercise](exercises/13-workshop-candidate-screening/) | 90 |
+| 14 | Credential Google AI (Gemini) | [14-google-ai-credential](lessons/14-google-ai-credential/) | [exercise](exercises/14-google-ai-credential/) | 30 |
+| 15 | Credential OpenAI | [15-openai-credential](lessons/15-openai-credential/) | [exercise](exercises/15-openai-credential/) | 30 |
+| 16 | Credential OpenRouter | [16-openrouter-credential](lessons/16-openrouter-credential/) | [exercise](exercises/16-openrouter-credential/) | 30 |
+| 17 | AI Agent คืออะไร | [17-ai-agents-concepts](lessons/17-ai-agents-concepts/) | [exercise](exercises/17-ai-agents-concepts/) | 40 |
+| 18 | Chat Agent + Memory | [18-chat-agent-memory](lessons/18-chat-agent-memory/) | [exercise](exercises/18-chat-agent-memory/) | 45 |
+| 19 | Agent + Tools (Function Calling) | [19-agent-with-tools](lessons/19-agent-with-tools/) | [exercise](exercises/19-agent-with-tools/) | 45 |
+| 20 | Simple RAG + Memory | [20-simple-rag-memory](lessons/20-simple-rag-memory/) | [exercise](exercises/20-simple-rag-memory/) | 60 |
+| 21 | MCP Client & Server | [21-mcp-client-server](lessons/21-mcp-client-server/) | [exercise](exercises/21-mcp-client-server/) | 60 |
+| 22 | Workshop #3: RAG ด้วย Pinecone | [22-workshop-rag-pinecone](lessons/22-workshop-rag-pinecone/) | [exercise](exercises/22-workshop-rag-pinecone/) | 90 |
+| 23 | Multi-Agents (Linear vs Orchestration) | [23-multi-agents](lessons/23-multi-agents/) | [exercise](exercises/23-multi-agents/) | 90 |
+| 24 | Bonus: สร้าง Flow ด้วย Agentic IDE | [24-agentic-ide-bonus](lessons/24-agentic-ide-bonus/) | [exercise](exercises/24-agentic-ide-bonus/) | 60 |
+| 25 | Self-Hosting n8n (Docker + Cloudflare) | [25-self-hosting](lessons/25-self-hosting/) | [exercise](exercises/25-self-hosting/) | 90 |
+
+Workshop หลัก 3 ชิ้น: **#1** ระบบรับเรื่องฟอร์ม → Google Workspace + LINE (unit 10), **#2** คัดกรองใบสมัครด้วย AI (unit 13), **#3** ระบบถาม-ตอบจากเอกสารองค์กรด้วย RAG (unit 22)
+
+## 5. How to run the exercises / วิธีทำแบบฝึกหัด
+
+1. อ่าน `lessons/NN-slug/` ก่อน แล้วเปิด `exercises/NN-slug/`
+2. ทำตาม `LAB.md` — สร้าง workflow เอง (หรือ import จาก `starter/` ถ้ามี)
+3. **พยายามเองก่อน** แล้วค่อยเทียบกับ `solution/` (มี workflow .json พร้อมรัน 18 ไฟล์)
+4. เช็คความสำเร็จด้วยหัว "Check your work" ท้าย LAB ทุกหน่วย
+
+นำเข้า workflow เร็ว ๆ: เปิดไฟล์ `.json` → copy ทั้งหมด → วางบน canvas ของ n8n (หรือ Workflow → Import from File / URL)
+
+## 6. Slide deck
+
+Deck ประกอบการสอน (258 หน้า หลังตัดหน้าโฆษณา): [`other/slides/N8N-L1-Onto-IQ-v6.pptx`](other/slides/) — ทุก lesson ระบุช่วง slide อ้างอิงไว้ในตารางด้านบนของหน้า lesson
+
+## 7. Course description (JD)
+
+สำเนาคำอธิบายคอร์สอยู่ที่ [other/docs/JD.md](other/docs/JD.md) (source of truth: Obsidian `Courses/n8n-workflow-automation-L1.md`)
+
+## 8. Repository layout / โครงสร้าง
+
+```text
+├── README.md                # outline คอร์ส (ไฟล์นี้)
+├── COURSE.md                # manifest ของคอร์ส (เครื่องมืออ่านค่าจากนี้)
+├── SETUP.md                 # สิ่งที่ต้องเตรียมก่อนวันแรก
+├── CONTRIBUTING.md          # วิธีเพิ่ม/แก้เนื้อหา
+├── CHANGELOG.md
+├── lessons/NN-slug/         # ทฤษฎี: README.md + LESSON.md
+├── exercises/NN-slug/       # ลงมือทำ: README.md + LAB.md + starter/ + solution/
+├── org/                     # โน้ต topic-family ขององค์กร (onto-iq / datafabric-academy)
+├── other/
+│   ├── slides/              # deck ประกอบการสอน
+│   ├── datasets/            # ข้อมูลตัวอย่าง + case studies (ชื่อไทยได้)
+│   ├── docs/                # JD, instructor notes, คู่มือ credentials
+│   ├── reference/           # สรุป n8n 2026 rebrand + 2.x, cheat sheets
+│   ├── assets/              # รูป/แผนภาพ
+│   └── scripts/             # check_structure.sh + migrate scripts
+├── docker-compose.yml       # รัน n8n (n8n + postgres + cloudflared)
+└── .env.example             # ตั้งค่า .env ก่อน compose up
 ```
-n8n-student-selfhost/
-├── 📁 workflows/              # ชุด Workflow สำหรับการเรียน
-│   ├── 01_Basics/            # พื้นฐาน n8n (6 workflows)
-│   ├── 02_AI_Agents_Basics/  # AI Agents (5 workflows)
-│   └── 03_Used_Cases/        # Use Cases จริง (7 workflows)
-│
-├── 📁 Credentials/           # คู่มือการตั้งค่า Credentials
-│   ├── google-oauth.md
-│   ├── line-api.md
-│   └── openai-api.md
-│
-├── 📁 Case Studies/          # ตัวอย่าง Case จากธุรกิจจริง
-├── docker-compose.yml        # ไฟล์สำหรับรัน n8n
-├── .env.example             # ตัวอย่างการตั้งค่า
-└── README.md                # ไฟล์นี้
-```
 
----
+กฎ: lesson กับ exercise แยกโฟลเดอร์, ชื่อหน่วยเป็น `NN-slug` ASCII เท่านั้น, ไฟล์ประกอบอื่นใส่ใต้ `other/` เท่านั้น — ตรวจโครงสร้างด้วย `bash other/scripts/check_structure.sh` (รันใน CI ผ่าน `.github/workflows/structure-check.yml`)
 
-## 🚀 Quick Start - เริ่มต้นใช้งาน
-
-### สำหรับผู้ที่ยังไม่มี n8n
-
-ติดตั้ง n8n บนเครื่องตัวเองพร้อม Cloudflare Tunnel (ให้ได้ **HTTPS** — จำเป็นสำหรับ Webhook และ Chat กับบริการภายนอก):
-
-1. **Clone โปรเจกต์**
-   ```bash
-   git clone https://github.com/Onto-IQ/n8n-student-selfhost.git
-   cd n8n-student-selfhost
-   ```
-
-2. **ตั้งค่า Environment**
-   ```bash
-   cp .env.example .env
-   # แก้ไขไฟล์ .env ตามคู่มือด้านล่าง
-   ```
-
-3. **รัน n8n**
-   ```bash
-   docker compose up -d
-   ```
-
-4. **เข้าใช้งาน**
-   - Local: http://localhost:5678
-   - Online: https://n8n.your-domain.com (ถ้าตั้งค่า Cloudflare Tunnel)
-
----
-
-## 📚 เนื้อหาการเรียน (18 Workflows)
-
-### 🌱 Phase 1: พื้นฐาน (01_Basics)
-สำหรับผู้ไม่เคยใช้ n8n - [ดูรายละเอียด](workflows/01_Basics/README.md)
-
-| ลำดับ | หัวข้อ | สิ่งที่เรียนรู้ |
-|-------|--------|----------------|
-| 01 | JSON Basics | Key-Value, Data Types |
-| 02 | Flow Control | IF, Switch Nodes |
-| 03 | Loop | Loop, Item Lists |
-| 04 | Data Transformation | Edit Fields, Code Node |
-| 05 | External APIs | HTTP Request |
-| 06 | Webhooks | Webhook Trigger |
-
-**⏱️ เวลา:** 1-2 วัน
-
----
-
-### 🚀 Phase 2: AI Agents (02_AI_Agents_Basics)
-เริ่มสร้าง AI Agents - [ดูรายละเอียด](workflows/02_AI_Agents_Basics/README.md)
-
-| ลำดับ | หัวข้อ | สิ่งที่เรียนรู้ |
-|-------|--------|----------------|
-| 01 | Basic Chat Agent | AI Agent + Memory |
-| 02 | Agent with Tools | Function Calling |
-| 03 | Simple RAG | AI อ่านเอกสาร |
-| 04 | MCP Client | เชื่อม External Tools |
-| 04 | MCP Server | เปิด n8n เป็น Server |
-
-**⏱️ เวลา:** 2-3 วัน
-
----
-
-### 🎯 Phase 3: Use Cases จริง (03_Used_Cases)
-ตัวอย่างจากโลกธุรกิจ - [ดูรายละเอียด](workflows/03_Used_Cases/README.md)
-
-| ระดับ | ไฟล์ | ใช้งาน |
-|-------|------|--------|
-| 🟢 พื้นฐาน | LINE Chat Gemini | Chat Bot |
-| 🟢 พื้นฐาน | Form → Google Workspace | ระบบรับเรื่อง |
-| 🟡 กลาง | Candidate Screening | HR Automation |
-| 🟡 กลาง | RAG with Pinecone | Vector DB |
-| 🔴 สูง | Multi-Agent Linear | Sequential Pattern |
-| 🔴 สูง | Multi-Agent Orchestration | 2026 Pattern |
-| 🔴 สูง | Sub-Workflows | Modular Design |
-
-**⏱️ เวลา:** 3-5 วัน
-
----
-
-## 🔧 คู่มือการติดตั้ง (Detailed Setup)
-
-### 📋 Prerequisites
-
-1. [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. โดเมนเนมส่วนตัว ([Namecheap](https://www.namecheap.com/) แนะนำ)
-3. บัญชี [Cloudflare](https://dash.cloudflare.com/) (ฟรี) — ใช้สร้าง Tunnel เพื่อให้ได้ **HTTPS** (จำเป็นสำหรับ Webhook และ Chat ดูรายละเอียดใน [🔒 ทำไมต้องใช้ HTTPS](#-ทำไมต้องใช้-https-ssl))
-
-### ขั้นตอนที่ 1: เตรียม Domain และ Cloudflare
-
-1. **จดโดเมน** ที่ Namecheap หรือผู้ให้บริการอื่น
-2. **เพิ่ม Site ใน Cloudflare**:
-   - เข้า Cloudflare → Add a Site → ใส่โดเมน
-   - เลือก Free Plan
-3. **เปลี่ยน Nameservers** ที่ Namecheap เป็นค่าที่ Cloudflare ให้มา
-   - รอ 5 นาที - 24 ชั่วโมง
-
-### ขั้นตอนที่ 2: สร้าง Cloudflare Tunnel
-
-1. Cloudflare Dashboard → **Zero Trust** → **Networks** → **Tunnels**
-2. **Create a tunnel** → เลือก **Cloudflared**
-3. ตั้งชื่อ Tunnel (เช่น `n8n-my-pc`)
-4. คัดลอก **Token** จากคำสั่ง Docker (หลัง `--token`)
-5. **Route traffic**:
-   - Public hostname: `n8n.your-domain.com`
-   - Service: HTTP → `n8n:5678`
-
-### ขั้นตอนที่ 3: ตั้งค่า .env และรัน
+## 9. Self-host รัน n8n ของคุณเอง (สรุป)
 
 ```bash
-# 1. คัดลอกไฟล์ตั้งค่า
-cp .env.example .env
-
-# 2. แก้ไข .env ด้วย Text Editor
-# POSTGRES_PASSWORD=your_password
-# N8N_HOST=n8n.your-domain.com
-# WEBHOOK_URL=https://n8n.your-domain.com/
-# CLOUDFLARE_TUNNEL_TOKEN=eyJh...
-
-# 3. รัน n8n
-docker compose up -d
+git clone https://github.com/Onto-IQ/n8n-workflow-automation.git
+cd n8n-workflow-automation
+cp .env.example .env        # แก้ POSTGRES_PASSWORD / N8N_HOST / WEBHOOK_URL / CLOUDFLARE_TUNNEL_TOKEN
+docker compose up -d        # local: http://localhost:5678
 ```
 
-### ขั้นตอนที่ 4: เข้าใช้งาน
+HTTPS จำเป็นสำหรับ webhook/chat — ตั้ง Cloudflare Tunnel ตาม [SETUP.md](SETUP.md) และ unit 25
 
-- Local: http://localhost:5678
-- Online: https://n8n.your-domain.com
-- ตั้งค่า Owner Account ครั้งแรก
+### การจัดการ n8n
 
----
-
-## 🛑 การจัดการ n8n
-
-### หยุดการทำงาน
 ```bash
-docker compose down
+docker compose down                # หยุด
+docker compose logs -f n8n         # ดู log
+docker compose pull && docker compose up -d   # อัปเดตเวอร์ชัน
+docker compose exec n8n n8n user-management:reset   # ลืมรหัสผ่าน
 ```
 
-### ดู Logs
-```bash
-docker compose logs -f n8n
-```
-
-### อัปเดต n8n เป็นเวอร์ชันล่าสุด
-```bash
-docker compose pull
-docker compose up -d
-```
-
-### สำรองข้อมูล (Backup)
-โฟลเดอร์ `data/` เก็บข้อมูลทั้งหมดของ n8n ควรสำรองก่อนลบ Container:
-
-| โฟลเดอร์ | เก็บอะไร |
-|----------|----------|
-| `data/postgres/` | ฐานข้อมูล (workflows, credentials ที่เข้ารหัสแล้ว, execution) |
-| `data/n8n/` | Config และ **Encryption Key** ที่ n8n ใช้ถอดรหัส credentials ใน DB |
+**สำรองข้อมูล** — `data/postgres/` (DB: workflows, credentials, executions) และ `data/n8n/` (config + **Encryption Key** ใช้ถอดรหัส credentials) ต้องมีทั้งคู่จึง restore ได้ครบ:
 
 ```bash
-# สำรองทั้งคู่ (ต้องมีทั้งสองถึงจะ restore ได้ครบ)
 cp -r data data-backup-$(date +%Y%m%d)
 ```
 
-> **⚠️ คำเตือน:** อย่าลบโฟลเดอร์ `data/` ถ้าต้องการเก็บ Workflow และ Credentials ที่สร้างไว้
+> อย่าลบ `data/` ถ้าต้องการเก็บ workflow/credentials ที่สร้างไว้ — restore: นำโฟลเดอร์กลับมาเป็น `data/` ใช้ `.env` เดิม (อย่างน้อย `POSTGRES_USER/PASSWORD/DB`) แล้ว `docker compose up -d`
 
-### กู้คืนข้อมูล (Restore)
-เพื่อให้ใช้ได้ทันทีหลัง restore:
-1. นำโฟลเดอร์ที่ backup กลับมาเป็น `data/` (หรือ copy เนื้อหาใน `data-backup-xxx/postgres` และ `data-backup-xxx/n8n` ไปที่ `data/postgres` และ `data/n8n`)
-2. ใช้ค่า `.env` เดิม (อย่างน้อย `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`) ให้ตรงกับตอน backup
-3. รัน `docker compose up -d` — workflows และ credentials จะใช้ได้ตามเดิม
+### ทำไมต้อง HTTPS
 
-ถ้าไม่มี `data/n8n` (หรือ Encryption Key ไม่ตรงกับตอน backup) credentials ใน DB จะถอดรหัสไม่ได้
+Webhook production ของบริการภายนอก (LINE, Telegram, Shopify, GitHub) รับเฉพาะ `https://`; ฟีเจอร์เบราว์เซอร์ที่ต้อง secure context (chat, notifications) ใช้ได้เฉพาะ HTTPS/localhost; ข้อมูลที่ไม่เข้ารหัสเสี่ยง MITM และกระทบความน่าเชื่อถือขององค์กร โปรเจกต์นี้จึงใช้ Cloudflare Tunnel ให้ HTTPS โดยไม่ต้องจัด certificate เอง
 
----
+## 10. License / Credits
 
-## 🔒 ทำไมต้องใช้ HTTPS (SSL)
-
-**การไม่มี HTTPS จะทำให้ Webhook และ Chat ใช้งานไม่ได้หรือทำงานไม่ครบ** และมีความเสี่ยงด้านความปลอดภัยดังนี้
-
-### ผลต่อการใช้งาน n8n โดยตรง
-
-| ฟีเจอร์ | ผลเมื่อใช้แค่ HTTP |
-|--------|---------------------|
-| **Webhook** | ใช้กับ Production **ไม่ได้** — บริการภายนอก (LINE, Telegram, Shopify, GitHub ฯลฯ) กำหนดให้ Webhook URL ต้องเป็น **HTTPS เท่านั้น** จึงจะยอมส่งเหตุการณ์มาได้ |
-| **Chat (Chat Trigger / AI Agent)** | ถ้าเข้า n8n ผ่านโดเมนสาธารณะแบบ HTTP ฟีเจอร์ที่พึ่งพา Secure Context ของเบราว์เซอร์ (เช่น บางส่วนของ real-time, Notifications) อาจใช้ไม่ได้ หรือเบราว์เซอร์ขึ้นว่า "Not Secure" |
-
-- n8n ใช้ตัวแปร `WEBHOOK_URL` ต้องเป็น URL เต็มที่ **ขึ้นต้นด้วย `https://`** เพื่อให้ Production Webhook ทำงาน ([n8n docs](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook), [n8n community](https://community.n8n.io/t/how-to-make-my-webhooks-become-https/20410)).
-- แนะนำให้ใช้ Reverse Proxy หรือ Tunnel (เช่น Cloudflare Tunnel) เพื่อให้ได้ HTTPS จริง
-
-### ผลกระทบด้านความปลอดภัยและความน่าเชื่อถือ (จากแหล่งสาธารณะ)
-
-- **ข้อมูลไม่เข้ารหัส (Plaintext)** — ข้อมูลทุกอย่างส่งผ่าน HTTP ถูกส่งแบบไม่เข้ารหัส ทำให้เสี่ยงถูกดักอ่านหรือแก้ไข (Man-in-the-Middle) ([MDN TLS](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/TLS), [MDN MITM](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/MITM)).
-- **เบราว์เซอร์และ SEO** — เบราว์เซอร์จะแสดงสถานะ "Not Secure" สำหรับหน้า HTTP และเครื่องมือค้นหาอาจจัดอันดับต่ำลง ([The Web Almanac 2024 - Security](https://almanac.httparchive.org/en/2024/security)).
-- **Web APIs ที่ต้องใช้ Secure Context** — APIs ที่เกี่ยวกับความปลอดภัยหรือความเป็นส่วนตัว (เช่น Service Workers, Notifications, Geolocation, Web Crypto, Payment Request) ทำงานได้เฉพาะใน Secure Context (โดยทั่วไปคือ HTTPS หรือ localhost) ([MDN Secure Contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts), [Features restricted to secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts)).
-- **ความเสี่ยงทางธุรกิจและกฎหมาย** — การรั่วไหลข้อมูลจากช่องทางไม่เข้ารหัสอาจนำไปสู่การสูญเสียความเชื่อถือของลูกค้า ค่าปรับตามกฎหมาย (เช่น GDPR) และความเสียหายต่อแบรนด์ ([การวิเคราะห์ความเสี่ยงจากการไม่ใช้ SSL](https://www.oreateai.com/blog/analysis-of-security-risks-and-business-threats-from-not-deploying-ssl-certificates-on-corporate-websites/b7822e9298c6776394216d55c67bf15d)).
-- **แนวทาง Webhook จากผู้ให้บริการ** — คู่มือแนวทางปฏิบัติของ GitHub และ Shopify แนะนำให้ส่ง Webhook ผ่าน HTTPS และตรวจสอบลายเซ็น ([GitHub Webhooks Best Practices](https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks), [Shopify HTTPS Webhooks](https://shopify.dev/docs/apps/build/webhooks/subscribe/https)).
-
-**สรุป:** สำหรับการใช้งานจริง (โดยเฉพาะ Webhook และ Chat ผ่านโดเมนสาธารณะ) ควรใช้ HTTPS เสมอ โปรเจกต์นี้ใช้ Cloudflare Tunnel เพื่อให้ได้ HTTPS โดยไม่ต้องจัดการ certificate เอง
-
----
-
-## 🆘 แก้ไขปัญหาเบื้องต้น
-
-### n8n ไม่เปิด
-```bash
-# ตรวจสอบสถานะ
-docker compose ps
-
-# ดู error
-docker compose logs n8n
-```
-
-### Webhook ไม่ทำงาน
-- **ต้องใช้ HTTPS** — Production Webhook ต้องมี URL เป็น `https://` เท่านั้น บริการเช่น LINE, Telegram, Shopify จะไม่ยอมส่งเหตุการณ์มาที่ HTTP
-- ตรวจสอบ `WEBHOOK_URL` ใน `.env` ว่าเป็น `https://...` และโดเมนตรงกับที่ Tunnel ชี้
-- ตรวจสอบ Cloudflare Tunnel ทำงานอยู่หรือไม่
-- ทดสอบ: `curl https://n8n.your-domain.com/webhook-test`
-
-### ลืมรหัสผ่าน n8n
-```bash
-# Reset owner account
-docker compose exec n8n n8n user-management:reset
-```
-
----
-
-## 📖 เอกสารอื่นๆ
-
-- [📁 คู่มือ Credentials](Credentials/) - วิธีขอ API Key ต่างๆ
-- [📁 ตัวอย่าง Case Studies](Case%20Studies/) - จากธุรกิจจริง
-- [🌐 n8n Documentation](https://docs.n8n.io/)
-- [💬 n8n Community](https://community.n8n.io/)
-
----
-
-## 📝 License
-
-MIT License - ใช้เพื่อการศึกษาได้ฟรี
-
----
-
-<div align="center">
-
-**สร้างด้วย ❤️ สำหรับนักเรียน n8n**
-
-[เริ่มเรียน Phase 1 →](workflows/01_Basics/README.md)
-
-</div>
+เนื้อหาเพื่อการศึกษา © 2026 Onto-IQ — สไลด์และโครงสร้างหลักสูตรจัดทำโดย Aj. Phakkhaphong Krittawat; workflow ตัวอย่างใช้ MIT license เว้นแต่ระบุอื่น อ้างอิง [n8n docs](https://docs.n8n.io/) และ [n8n community](https://community.n8n.io/)

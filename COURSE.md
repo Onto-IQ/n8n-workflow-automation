@@ -1,0 +1,28 @@
+---
+course_name: "Workflow Automation with n8n (L1)"
+course_code: "N8N-L1-01"
+org: "Onto-IQ"
+language: "th"
+duration: "3 วัน (หรือ 25 หน่วย x 30–90 นาที)"
+repo_url: "https://github.com/Onto-IQ/n8n-workflow-automation"
+lessons_path: "lessons/"
+exercises_path: "exercises/"
+other_path: "other/"
+deck_path: "other/slides/"
+datasets_path: "other/datasets/"
+assets_path: "other/assets/"
+jd_source: "Courses/n8n-workflow-automation-L1.md"
+jd_file: "other/docs/JD.md"
+status: "ready"
+---
+
+# COURSE.md
+
+Course manifest for this repo. The fields in the front matter above are the
+contract: tools read them instead of guessing paths. If you move a folder,
+update the matching `*_path` field. `other/scripts/check_structure.sh` fails
+when a required key is missing.
+
+หมายเหตุ (Onto-IQ): deck อยู่ที่ `other/slides/N8N-L1-Onto-IQ-v6.pptx` (258 หน้า,
+ตัดหน้าโฆษณาและเครื่องหมายลิขสิทธิ์เดิมออกแล้ว) เนื้อหาอัปเดตตาม n8n 2.x และ
+brand refresh 2026 — สรุปอยู่ใน `other/reference/n8n-2026-rebrand-and-2x.md`
