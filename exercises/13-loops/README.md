@@ -1,6 +1,6 @@
 # Exercise 05 — Loop การวนซ้ำ
 
-คู่กับ [lessons/05-loops](../../lessons/05-loops/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/13-loops](../../lessons/13-loops/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -16,5 +16,5 @@
 - ประมวลผลนักเรียน 3 คนทีละคนด้วย loop
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/05-loops/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/13-loops/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

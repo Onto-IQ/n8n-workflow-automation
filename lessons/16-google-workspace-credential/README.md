@@ -1,11 +1,11 @@
 # 09 — Credential Google Workspace (OAuth2) / Google Workspace credential (OAuth2)
 
-Folder rule: `lessons/09-google-workspace-credential/` — คู่กับ [exercises/09-google-workspace-credential](../../exercises/09-google-workspace-credential/)
+Folder rule: `lessons/16-google-workspace-credential/` — คู่กับ [exercises/16-google-workspace-credential](../../exercises/16-google-workspace-credential/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/09-google-workspace-credential](../../exercises/09-google-workspace-credential/README.md) |
+| Exercise | [exercises/16-google-workspace-credential](../../exercises/16-google-workspace-credential/README.md) |
 | เวลาโดยประมาณ | ~60 นาที |
 | อ้างอิง slide | slides 71–90 (หน้าจอ 64–83) |
 
@@ -17,4 +17,4 @@ Folder rule: `lessons/09-google-workspace-credential/` — คู่กับ [e
 - บัญชี Google; n8n มี URL แบบ HTTPS ใช้งานได้
 
 ## Next
-→ [exercises/09-google-workspace-credential](../../exercises/09-google-workspace-credential/README.md) — ลงมือทำใน exercise
+→ [exercises/16-google-workspace-credential](../../exercises/16-google-workspace-credential/README.md) — ลงมือทำใน exercise

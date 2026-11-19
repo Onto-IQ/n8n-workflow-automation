@@ -1,6 +1,6 @@
 # Exercise 12 — สถานการณ์ LLM ปี 2026
 
-คู่กับ [lessons/12-llm-landscape](../../lessons/12-llm-landscape/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/03-llm-landscape](../../lessons/03-llm-landscape/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - ประเมินทางเลือก LLM สำหรับงานของคุณ
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/12-llm-landscape/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/03-llm-landscape/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

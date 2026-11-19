@@ -1,6 +1,6 @@
 # Exercise 18 — Chat Agent + Memory
 
-คู่กับ [lessons/18-chat-agent-memory](../../lessons/18-chat-agent-memory/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/08-chat-agent-memory](../../lessons/08-chat-agent-memory/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - agent ที่จำชื่อและบริบทของคุณได้ตลอดบทสนทนา
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/18-chat-agent-memory/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/08-chat-agent-memory/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

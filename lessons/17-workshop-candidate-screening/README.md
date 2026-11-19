@@ -1,11 +1,11 @@
 # 13 — Workshop #2: คัดกรองใบสมัครจาก Gmail / Workshop #2: Candidate screening from Gmail
 
-Folder rule: `lessons/13-workshop-candidate-screening/` — คู่กับ [exercises/13-workshop-candidate-screening](../../exercises/13-workshop-candidate-screening/)
+Folder rule: `lessons/17-workshop-candidate-screening/` — คู่กับ [exercises/17-workshop-candidate-screening](../../exercises/17-workshop-candidate-screening/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/13-workshop-candidate-screening](../../exercises/13-workshop-candidate-screening/README.md) |
+| Exercise | [exercises/17-workshop-candidate-screening](../../exercises/17-workshop-candidate-screening/README.md) |
 | เวลาโดยประมาณ | ~90 นาที |
 | อ้างอิง slide | slides 131–141 (หน้าจอ 124–134) |
 
@@ -16,4 +16,4 @@ Folder rule: `lessons/13-workshop-candidate-screening/` — คู่กับ [
 - Unit 09, 15 (Gmail OAuth2 + OpenAI credential); ไฟล์ JD/Resume ตัวอย่างใน other/datasets/
 
 ## Next
-→ [exercises/13-workshop-candidate-screening](../../exercises/13-workshop-candidate-screening/README.md) — ลงมือทำใน exercise
+→ [exercises/17-workshop-candidate-screening](../../exercises/17-workshop-candidate-screening/README.md) — ลงมือทำใน exercise

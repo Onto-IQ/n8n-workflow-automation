@@ -1,6 +1,6 @@
 # Exercise 11 — Credential LINE OA
 
-คู่กับ [lessons/11-line-oa-credential](../../lessons/11-line-oa-credential/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/18-line-oa-credential](../../lessons/18-line-oa-credential/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - LINE credential พร้อมใช้และทดสอบ webhook ติดได้
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/11-line-oa-credential/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/18-line-oa-credential/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

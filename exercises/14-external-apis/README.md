@@ -1,6 +1,6 @@
 # Exercise 07 — เรียกใช้ External APIs
 
-คู่กับ [lessons/07-external-apis](../../lessons/07-external-apis/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/14-external-apis](../../lessons/14-external-apis/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - ดึงมุกจาก public API แล้วส่งต่อด้วย POST
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/07-external-apis/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/14-external-apis/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

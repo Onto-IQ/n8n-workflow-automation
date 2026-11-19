@@ -1,6 +1,6 @@
 # Exercise 09 — Credential Google Workspace (OAuth2)
 
-คู่กับ [lessons/09-google-workspace-credential](../../lessons/09-google-workspace-credential/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/16-google-workspace-credential](../../lessons/16-google-workspace-credential/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - เชื่อม Google Workspace เข้า n8n สำเร็จ 1 บริการ (Gmail) และพร้อมใช้ที่เหลือ
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/09-google-workspace-credential/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/16-google-workspace-credential/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

@@ -1,11 +1,11 @@
 # 18 — Chat Agent + Memory / Chat agent with memory
 
-Folder rule: `lessons/18-chat-agent-memory/` — คู่กับ [exercises/18-chat-agent-memory](../../exercises/18-chat-agent-memory/)
+Folder rule: `lessons/08-chat-agent-memory/` — คู่กับ [exercises/08-chat-agent-memory](../../exercises/08-chat-agent-memory/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/18-chat-agent-memory](../../exercises/18-chat-agent-memory/README.md) |
+| Exercise | [exercises/08-chat-agent-memory](../../exercises/08-chat-agent-memory/README.md) |
 | เวลาโดยประมาณ | ~45 นาที |
 | อ้างอิง slide | slides 172–176 (หน้าจอ 165–169) |
 
@@ -16,4 +16,4 @@ Folder rule: `lessons/18-chat-agent-memory/` — คู่กับ [exercises/1
 - Unit 15 หรือ 14 (มี LLM credential แล้ว)
 
 ## Next
-→ [exercises/18-chat-agent-memory](../../exercises/18-chat-agent-memory/README.md) — ลงมือทำใน exercise
+→ [exercises/08-chat-agent-memory](../../exercises/08-chat-agent-memory/README.md) — ลงมือทำใน exercise

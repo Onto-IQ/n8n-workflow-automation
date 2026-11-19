@@ -1,6 +1,6 @@
 # Exercise 10 — Workshop #1: ฟอร์ม → Google Workspace + LINE
 
-คู่กับ [lessons/10-workshop-form-to-workspace-line](../../lessons/10-workshop-form-to-workspace-line/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/19-workshop-form-to-workspace-line](../../lessons/19-workshop-form-to-workspace-line/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - ติดตั้งและรันระบบรับเรื่องครบวงจรให้ได้จริง
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/10-workshop-form-to-workspace-line/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/19-workshop-form-to-workspace-line/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

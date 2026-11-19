@@ -1,6 +1,6 @@
 # Exercise 15 — Credential OpenAI
 
-คู่กับ [lessons/15-openai-credential](../../lessons/15-openai-credential/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/05-openai-credential](../../lessons/05-openai-credential/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - OpenAI credential ใช้งานได้จริงภายในงบที่ตั้ง
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/15-openai-credential/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/05-openai-credential/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

@@ -1,6 +1,6 @@
 # Exercise 21 — MCP Client & Server
 
-คู่กับ [lessons/21-mcp-client-server](../../lessons/21-mcp-client-server/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/22-mcp-client-server](../../lessons/22-mcp-client-server/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -16,5 +16,5 @@
 - ต่อ MCP สำเร็จทั้งสองฝั่ง
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/21-mcp-client-server/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/22-mcp-client-server/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

@@ -1,11 +1,11 @@
 # 19 — AI Agent + Tools (Function Calling) / Agent with tools (function calling)
 
-Folder rule: `lessons/19-agent-with-tools/` — คู่กับ [exercises/19-agent-with-tools](../../exercises/19-agent-with-tools/)
+Folder rule: `lessons/09-agent-with-tools/` — คู่กับ [exercises/09-agent-with-tools](../../exercises/09-agent-with-tools/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/19-agent-with-tools](../../exercises/19-agent-with-tools/README.md) |
+| Exercise | [exercises/09-agent-with-tools](../../exercises/09-agent-with-tools/README.md) |
 | เวลาโดยประมาณ | ~45 นาที |
 | อ้างอิง slide | slides 177–182 (หน้าจอ 170–175) |
 
@@ -16,4 +16,4 @@ Folder rule: `lessons/19-agent-with-tools/` — คู่กับ [exercises/19
 - Unit 18 เสร็จแล้ว
 
 ## Next
-→ [exercises/19-agent-with-tools](../../exercises/19-agent-with-tools/README.md) — ลงมือทำใน exercise
+→ [exercises/09-agent-with-tools](../../exercises/09-agent-with-tools/README.md) — ลงมือทำใน exercise

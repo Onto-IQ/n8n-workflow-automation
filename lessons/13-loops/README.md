@@ -1,11 +1,11 @@
 # 05 — Loop การวนซ้ำ / Loops
 
-Folder rule: `lessons/05-loops/` — คู่กับ [exercises/05-loops](../../exercises/05-loops/)
+Folder rule: `lessons/13-loops/` — คู่กับ [exercises/13-loops](../../exercises/13-loops/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/05-loops](../../exercises/05-loops/README.md) |
+| Exercise | [exercises/13-loops](../../exercises/13-loops/README.md) |
 | เวลาโดยประมาณ | ~45 นาที |
 | อ้างอิง slide | slides 65–66 (หน้าจอ 58–59) |
 
@@ -17,4 +17,4 @@ Folder rule: `lessons/05-loops/` — คู่กับ [exercises/05-loops](../
 - Unit 04 เสร็จแล้ว
 
 ## Next
-→ [exercises/05-loops](../../exercises/05-loops/README.md) — ลงมือทำใน exercise
+→ [exercises/13-loops](../../exercises/13-loops/README.md) — ลงมือทำใน exercise

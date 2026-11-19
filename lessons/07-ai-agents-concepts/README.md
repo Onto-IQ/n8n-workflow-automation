@@ -1,11 +1,11 @@
 # 17 — AI Agent คืออะไร / What is an AI agent
 
-Folder rule: `lessons/17-ai-agents-concepts/` — คู่กับ [exercises/17-ai-agents-concepts](../../exercises/17-ai-agents-concepts/)
+Folder rule: `lessons/07-ai-agents-concepts/` — คู่กับ [exercises/07-ai-agents-concepts](../../exercises/07-ai-agents-concepts/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/17-ai-agents-concepts](../../exercises/17-ai-agents-concepts/README.md) |
+| Exercise | [exercises/07-ai-agents-concepts](../../exercises/07-ai-agents-concepts/README.md) |
 | เวลาโดยประมาณ | ~40 นาที |
 | อ้างอิง slide | slides 165–171 (หน้าจอ 158–164) |
 
@@ -16,4 +16,4 @@ Folder rule: `lessons/17-ai-agents-concepts/` — คู่กับ [exercises/
 - Unit 12 เสร็จแล้ว
 
 ## Next
-→ [exercises/17-ai-agents-concepts](../../exercises/17-ai-agents-concepts/README.md) — ลงมือทำใน exercise
+→ [exercises/07-ai-agents-concepts](../../exercises/07-ai-agents-concepts/README.md) — ลงมือทำใน exercise

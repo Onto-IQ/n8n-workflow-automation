@@ -1,6 +1,6 @@
 # Exercise 19 — AI Agent + Tools (Function Calling)
 
-คู่กับ [lessons/19-agent-with-tools](../../lessons/19-agent-with-tools/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/09-agent-with-tools](../../lessons/09-agent-with-tools/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - agent ที่เลือกใช้ Calculator/Wikipedia ได้ถูกงาน
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/19-agent-with-tools/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/09-agent-with-tools/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

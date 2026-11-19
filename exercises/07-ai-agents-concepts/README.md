@@ -1,6 +1,6 @@
 # Exercise 17 — AI Agent คืออะไร
 
-คู่กับ [lessons/17-ai-agents-concepts](../../lessons/17-ai-agents-concepts/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/07-ai-agents-concepts](../../lessons/07-ai-agents-concepts/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - ออกแบบ agent ตัวแรกของคุณบนกระดาษก่อนลงมือ
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/17-ai-agents-concepts/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/07-ai-agents-concepts/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

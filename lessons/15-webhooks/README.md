@@ -1,11 +1,11 @@
 # 08 — Webhooks & Triggers / Webhooks & triggers
 
-Folder rule: `lessons/08-webhooks/` — คู่กับ [exercises/08-webhooks](../../exercises/08-webhooks/)
+Folder rule: `lessons/15-webhooks/` — คู่กับ [exercises/15-webhooks](../../exercises/15-webhooks/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/08-webhooks](../../exercises/08-webhooks/README.md) |
+| Exercise | [exercises/15-webhooks](../../exercises/15-webhooks/README.md) |
 | เวลาโดยประมาณ | ~40 นาที |
 | อ้างอิง slide | slides 69 (หน้าจอ 62) |
 
@@ -17,4 +17,4 @@ Folder rule: `lessons/08-webhooks/` — คู่กับ [exercises/08-webhook
 - Unit 02 เสร็จแล้ว; ถ้าอยากทดสอบจากอินเทอร์เน็ตต้องมี HTTPS ตาม SETUP.md
 
 ## Next
-→ [exercises/08-webhooks](../../exercises/08-webhooks/README.md) — ลงมือทำใน exercise
+→ [exercises/15-webhooks](../../exercises/15-webhooks/README.md) — ลงมือทำใน exercise

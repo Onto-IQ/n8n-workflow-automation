@@ -1,11 +1,11 @@
 # 07 — เรียกใช้ External APIs / Working with external APIs
 
-Folder rule: `lessons/07-external-apis/` — คู่กับ [exercises/07-external-apis](../../exercises/07-external-apis/)
+Folder rule: `lessons/14-external-apis/` — คู่กับ [exercises/14-external-apis](../../exercises/14-external-apis/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/07-external-apis](../../exercises/07-external-apis/README.md) |
+| Exercise | [exercises/14-external-apis](../../exercises/14-external-apis/README.md) |
 | เวลาโดยประมาณ | ~40 นาที |
 | อ้างอิง slide | slides 68 (หน้าจอ 61) |
 
@@ -17,4 +17,4 @@ Folder rule: `lessons/07-external-apis/` — คู่กับ [exercises/07-ex
 - Unit 06 เสร็จแล้ว
 
 ## Next
-→ [exercises/07-external-apis](../../exercises/07-external-apis/README.md) — ลงมือทำใน exercise
+→ [exercises/14-external-apis](../../exercises/14-external-apis/README.md) — ลงมือทำใน exercise

@@ -1,11 +1,11 @@
 # 15 — Credential OpenAI / OpenAI credential
 
-Folder rule: `lessons/15-openai-credential/` — คู่กับ [exercises/15-openai-credential](../../exercises/15-openai-credential/)
+Folder rule: `lessons/05-openai-credential/` — คู่กับ [exercises/05-openai-credential](../../exercises/05-openai-credential/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/15-openai-credential](../../exercises/15-openai-credential/README.md) |
+| Exercise | [exercises/05-openai-credential](../../exercises/05-openai-credential/README.md) |
 | เวลาโดยประมาณ | ~30 นาที |
 | อ้างอิง slide | slides 151–156 (หน้าจอ 144–149) |
 
@@ -16,4 +16,4 @@ Folder rule: `lessons/15-openai-credential/` — คู่กับ [exercises/1
 - บัญชี OpenAI; บัตรสำหรับผูก billing
 
 ## Next
-→ [exercises/15-openai-credential](../../exercises/15-openai-credential/README.md) — ลงมือทำใน exercise
+→ [exercises/05-openai-credential](../../exercises/05-openai-credential/README.md) — ลงมือทำใน exercise

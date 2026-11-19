@@ -1,11 +1,11 @@
 # 12 — สถานการณ์ LLM ปี 2026 / The LLM landscape in 2026
 
-Folder rule: `lessons/12-llm-landscape/` — คู่กับ [exercises/12-llm-landscape](../../exercises/12-llm-landscape/)
+Folder rule: `lessons/03-llm-landscape/` — คู่กับ [exercises/03-llm-landscape](../../exercises/03-llm-landscape/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/12-llm-landscape](../../exercises/12-llm-landscape/README.md) |
+| Exercise | [exercises/03-llm-landscape](../../exercises/03-llm-landscape/README.md) |
 | เวลาโดยประมาณ | ~40 นาที |
 | อ้างอิง slide | slides 120–129 (หน้าจอ 113–122) |
 
@@ -16,4 +16,4 @@ Folder rule: `lessons/12-llm-landscape/` — คู่กับ [exercises/12-ll
 - Unit 03 เสร็จแล้ว
 
 ## Next
-→ [exercises/12-llm-landscape](../../exercises/12-llm-landscape/README.md) — ลงมือทำใน exercise
+→ [exercises/03-llm-landscape](../../exercises/03-llm-landscape/README.md) — ลงมือทำใน exercise

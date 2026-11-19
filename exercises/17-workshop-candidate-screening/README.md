@@ -1,6 +1,6 @@
 # Exercise 13 — Workshop #2: คัดกรองใบสมัครจาก Gmail
 
-คู่กับ [lessons/13-workshop-candidate-screening](../../lessons/13-workshop-candidate-screening/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
+คู่กับ [lessons/17-workshop-candidate-screening](../../lessons/17-workshop-candidate-screening/) — ชื่อโฟลเดอร์ `NN-slug` ตรงกันเสมอ
 
 | | |
 |--|--|
@@ -15,5 +15,5 @@
 - รันระบบคัดกรองจนได้ผลคะแนนจริงใน Sheets
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/13-workshop-candidate-screening/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/17-workshop-candidate-screening/LESSON.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

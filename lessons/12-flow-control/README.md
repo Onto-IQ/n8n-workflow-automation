@@ -1,11 +1,11 @@
 # 04 — Flow Control: IF, Switch, Merge / Flow control: IF, Switch, Merge
 
-Folder rule: `lessons/04-flow-control/` — คู่กับ [exercises/04-flow-control](../../exercises/04-flow-control/)
+Folder rule: `lessons/12-flow-control/` — คู่กับ [exercises/12-flow-control](../../exercises/12-flow-control/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/04-flow-control](../../exercises/04-flow-control/README.md) |
+| Exercise | [exercises/12-flow-control](../../exercises/12-flow-control/README.md) |
 | เวลาโดยประมาณ | ~45 นาที |
 | อ้างอิง slide | slides 61–64 (หน้าจอ 54–57) |
 
@@ -17,4 +17,4 @@ Folder rule: `lessons/04-flow-control/` — คู่กับ [exercises/04-flo
 - Unit 03 เสร็จแล้ว (อ่าน expression ได้)
 
 ## Next
-→ [exercises/04-flow-control](../../exercises/04-flow-control/README.md) — ลงมือทำใน exercise
+→ [exercises/12-flow-control](../../exercises/12-flow-control/README.md) — ลงมือทำใน exercise

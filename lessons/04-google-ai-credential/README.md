@@ -1,11 +1,11 @@
 # 14 — Credential Google AI Studio (Gemini) / Google AI Studio (Gemini) credential
 
-Folder rule: `lessons/14-google-ai-credential/` — คู่กับ [exercises/14-google-ai-credential](../../exercises/14-google-ai-credential/)
+Folder rule: `lessons/04-google-ai-credential/` — คู่กับ [exercises/04-google-ai-credential](../../exercises/04-google-ai-credential/)
 
 | | |
 |--|--|
 | Lesson | [LESSON.md](LESSON.md) |
-| Exercise | [exercises/14-google-ai-credential](../../exercises/14-google-ai-credential/README.md) |
+| Exercise | [exercises/04-google-ai-credential](../../exercises/04-google-ai-credential/README.md) |
 | เวลาโดยประมาณ | ~30 นาที |
 | อ้างอิง slide | slides 143–149 (หน้าจอ 136–142) |
 
@@ -17,4 +17,4 @@ Folder rule: `lessons/14-google-ai-credential/` — คู่กับ [exercise
 - บัญชี Google; Unit 11 เสร็จแล้ว (สำหรับส่วนรีวิว LINE)
 
 ## Next
-→ [exercises/14-google-ai-credential](../../exercises/14-google-ai-credential/README.md) — ลงมือทำใน exercise
+→ [exercises/04-google-ai-credential](../../exercises/04-google-ai-credential/README.md) — ลงมือทำใน exercise
