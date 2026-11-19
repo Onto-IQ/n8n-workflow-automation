@@ -1,6 +1,16 @@
 .env
 data/
+data-backup-*/
 .DS_Store
 Thumbs.db
 .windsurf/
 .windsurfrules
+
+# Office lock files + original/backup decks (เก็บไว้เครื่องเท่านั้น)
+~$*
+/[[]N8N-L1[]]*.pptx
+
+# ชั่วคราวจากการสร้าง deck/โครงสร้าง
+_tools/
+_deck_inspect/
+.zcode/
