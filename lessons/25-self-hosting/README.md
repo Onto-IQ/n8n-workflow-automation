@@ -8,7 +8,7 @@
 | อ้างอิง slide | N8N-L1-Onto-IQ-v7 หน้า 223–257 |
 | ตั้งค่าเครื่องก่อน | [SETUP.md](../SETUP.md) |
 
-หน่วยปิดคอร์ส: **เป็นเจ้าของ n8n ของตัวเอง** — รันด้วย Docker Compose (n8n + PostgreSQL + Cloudflare Tunnel) บนเครื่อง/VPS ได้ HTTPS จริงผ่านโดเมนของตัวเอง ควบคุมข้อมูล 100% และรู้วิธี backup/restore ที่ถูกต้อง
+หน่วยนี้ทำให้คุณ **เป็นเจ้าของ n8n ของตัวเอง** — รันด้วย Docker Compose (n8n + PostgreSQL + Cloudflare Tunnel) บนเครื่อง/VPS ได้ HTTPS จริงผ่านโดเมนของตัวเอง ควบคุมข้อมูล 100% และรู้วิธี backup/restore ที่ถูกต้อง HTTPS จากหน่วยนี้ยังเป็นเงื่อนไขของฟีเจอร์ **n8n Agents** ในหน่วยถัดไป (26) ด้วย
 
 ## ทำไมต้อง HTTPS (สรุปเหตุผล)
 
@@ -54,7 +54,7 @@ cp -r data data-backup-$(date +%Y%m%d)             # สำรอง
 
 - **สำรองให้ครบคู่กัน**: `data/postgres/` (workflows, credentials, executions) และ `data/n8n/` (config + **Encryption Key** ใช้ถอดรหัส credentials) — ขาดใดขาดหนึ่ง restore ไม่ครบ
 - **Restore**: นำโฟลเดอร์กลับมาเป็น `data/` ใช้ `.env` เดิม (อย่างน้อย POSTGRES_USER/PASSWORD/DB) แล้ว `docker compose up -d`
-- อัปเกรด = เปลี่ยน image tag ใน `docker-compose.yml` (เช่น `n8nio/n8n:2.28.6`) — อ่าน Migration Report ก่อนขยับ version ใหญ่
+- อัปเกรด = เปลี่ยน image tag ใน `docker-compose.yml` (repo pin `n8nio/n8n:2.48.5` ไว้แล้ว) — อ่าน Migration Report ก่อนขยับ version ใหญ่
 
 ## Key takeaways
 
@@ -74,4 +74,5 @@ cp -r data data-backup-$(date +%Y%m%d)             # สำรอง
 
 ## Next
 
-→ [exercises/25-self-hosting](../../exercises/25-self-hosting/README.md) — เป็นเจ้าของ n8n ของคุณเอง จบคอร์สแบบครบวงจร
+→ [exercises/25-self-hosting](../../exercises/25-self-hosting/README.md) — เป็นเจ้าของ n8n ของคุณเอง พร้อมรองรับทุกฟีเจอร์ในหน่วยสุดท้าย
+→ บทถัดไป: [26 — n8n Agents: Agent Builder](../26-agents/README.md)

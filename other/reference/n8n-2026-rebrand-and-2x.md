@@ -31,7 +31,14 @@ n8n ปัจจุบันวางตัวเป็นแพลตฟอร�
 - SQLite pooling driver → เร็วขึ้นราว 10x ลดปัญหา "database locked"; binary data (รูป/PDF) ย้ายไป filesystem-based เพื่อความเสถียร
 - **AI Evaluation nodes** — ทดสอบ/ประเมิน AI agent ใน n8n โดยตรง
 - **MCP support** — ต่อ MCP servers ให้ AI เข้าถึง data/tools ภายนอก (unit 21)
-- Autosave กันงานหาย; **Migration Report** วิเคราะห์ workflow 1.x หา breaking changes ก่อนอัปเกรด (repo นี้ใช้ n8n 2.28.6 แล้ว ดู `other/scripts/migrate_workflows_2_28_6.py`)
+- Autosave กันงานหาย; **Migration Report** วิเคราะห์ workflow 1.x หา breaking changes ก่อนอัปเกรด (repo นี้ใช้ n8n 2.48.5 แล้ว ดู `other/scripts/migrate_workflows_2_28_6.py`)
+
+### n8n Agents (Agent Builder) — ฟีเจอร์ใหม่ยุค 2.x
+
+- Agent เป็น **resource ลำดับแรก** ใน project (แท็บ **Agents** ข้าง workflow) มี instructions, โมเดล, tools, skills, memory, channels (Telegram/Slack/Linear/Teams) และ schedules ของตัวเอง — แยกจาก AI Agent node ที่ติดอยู่ใน workflow
+- วงจร draft → publish (snapshot) → publish history คล้าย Publish vs Save ของ workflow; เรียกจาก workflow ด้วย node **Message an Agent** (1 turn = 1 execution)
+- เงื่อนไข self-hosted: n8n ≥ 2.32.3, โหมด regular (ยังไม่รองรับ queue mode), เปิดที่ **Settings > Agents > Enable Agents**, channel ต้องมี `WEBHOOK_URL` สาธารณะ — สถานะ Preview
+- สอนครบใน **unit 26** (`lessons/26-agents/`)
 
 ## License สั้น ๆ
 
@@ -41,4 +48,4 @@ n8n ปัจจุบันวางตัวเป็นแพลตฟอร�
 ## อ้างอิง
 
 - Blog: blog.n8n.io/n8n-brand-refresh-2026 · Community: community.n8n.io (thread "Our brand refresh, and why the logo changed") · guidelines.n8n.design
-- ความเชื่อมกับหลักสูตร: unit 01 (ภาพรวม), unit 21 (MCP), unit 23 (multi-agent + toolWorkflow), unit 25 (self-host 2.28.6)
+- ความเชื่อมกับหลักสูตร: unit 01 (ภาพรวม), unit 21 (MCP), unit 23 (multi-agent + toolWorkflow), unit 25 (self-host 2.48.5), unit 26 (n8n Agents)

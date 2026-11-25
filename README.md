@@ -32,7 +32,7 @@
 
 ## 4. Lesson outline / หัวข้อการเรียน
 
-เรียนตามลำดับ 25 หน่วย — ทุกหน่วยมี lesson (ทฤษฎี) และ exercise (ลงมือทำ) แยกโฟลเดอร์กัน
+เรียนตามลำดับ 27 หน่วย — ทุกหน่วยมี lesson (ทฤษฎี) และ exercise (ลงมือทำ) แยกโฟลเดอร์กัน
 
 | # | หัวข้อ | Lesson | Exercise | ~นาที |
 |---|--------|--------|----------|-------|
@@ -61,6 +61,8 @@
 | 23 | Multi-Agents (Linear vs Orchestration) | [23-multi-agents](lessons/23-multi-agents/) | [exercise](exercises/23-multi-agents/) | 90 |
 | 24 | Bonus: สร้าง Flow ด้วย Agentic IDE | [24-agentic-ide-bonus](lessons/24-agentic-ide-bonus/) | [exercise](exercises/24-agentic-ide-bonus/) | 60 |
 | 25 | Self-Hosting n8n (Docker + Cloudflare) | [25-self-hosting](lessons/25-self-hosting/) | [exercise](exercises/25-self-hosting/) | 90 |
+| 26 | n8n Agents: Agent Builder | [26-agents](lessons/26-agents/) | [exercise](exercises/26-agents/) | 75 |
+| 27 | Build with MCP: สั่งสร้าง Workflow ด้วย Prompt | [27-build-with-mcp](lessons/27-build-with-mcp/) | [exercise](exercises/27-build-with-mcp/) | 60 |
 
 Workshop หลัก 3 ชิ้น: **#1** ระบบรับเรื่องฟอร์ม → Google Workspace + LINE (unit 10), **#2** คัดกรองใบสมัครด้วย AI (unit 13), **#3** ระบบถาม-ตอบจากเอกสารองค์กรด้วย RAG (unit 22)
 
@@ -75,7 +77,7 @@ Workshop หลัก 3 ชิ้น: **#1** ระบบรับเรื่�
 
 ## 6. Slide deck
 
-Deck ประกอบการสอน (258 หน้า หลังตัดหน้าโฆษณา): [`other/slides/N8N-L1-Onto-IQ-v7.pptx`](other/slides/) — ทุก lesson ระบุช่วง slide อ้างอิงไว้ในตารางด้านบนของหน้า lesson
+Deck ประกอบการสอน (270 หน้า หลังตัดหน้าโฆษณา): [`other/slides/N8N-L1-Onto-IQ-v7.pptx`](other/slides/) — ทุก lesson ระบุช่วง slide อ้างอิงไว้ในตารางด้านบนของหน้า lesson
 
 ## 7. Course description (JD)
 

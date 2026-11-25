@@ -16,7 +16,19 @@
     },
     {
       "parameters": {
-        "event": "onReceived"
+        "event": "onReceived",
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "draftEmail",
+              "type": "string"
+            },
+            {
+              "name": "finalAmount",
+              "type": "string"
+            }
+          ]
+        }
       },
       "name": "Execute Workflow Trigger",
       "type": "n8n-nodes-base.executeWorkflowTrigger",

@@ -5,9 +5,9 @@ authoritative source for the structure rules summarised here.
 
 ## What this repo is
 
-**Workflow Automation with n8n — L1**: an Onto-IQ training course with 25 units,
+**Workflow Automation with n8n — L1**: an Onto-IQ training course with 27 units,
 written in Thai with English commands and tool names. Every unit pairs a lesson
-(theory) with an exercise (hands-on lab). The repo also ships 22 runnable n8n
+(theory) with an exercise (hands-on lab). The repo also ships 25 runnable n8n
 workflow JSON files and a self-hosting Docker stack.
 
 It is course material, not an application. There is no build, typecheck, linter,
@@ -93,7 +93,7 @@ cp -r data data-backup-$(date +%Y%m%d)  # back up
   and any `LAB.md` that refers to it. A new unit also needs a
   row in the root `README.md` outline.
 
-All 25 units share one file template. Copy an existing unit when adding one.
+All 27 units share one file template. Copy an existing unit when adding one.
 
 | File | Sections, in order |
 |---|---|
@@ -103,8 +103,9 @@ All 25 units share one file template. Copy an existing unit when adding one.
 
 ## Workflow JSON (`exercises/NN-slug/solution/*.json`)
 
-- Target version is n8n 2.28.6, pinned in `docker-compose.yml` and quoted in
-  `CHANGELOG.md` and `other/reference/n8n-2026-rebrand-and-2x.md`.
+- Target version is n8n 2.48.5 (bumped from 2.28.6 so the Agents feature of
+  unit 26 is available; self-hosted Agents need n8n ≥ 2.32.3), pinned in
+  `docker-compose.yml` and quoted in `other/reference/n8n-2026-rebrand-and-2x.md`.
 - Format: UTF-8 without BOM, 2-space indent, one key per line, literal Thai and
   emoji (no `\uXXXX` escapes), trailing newline. That is
   `json.dumps(workflow, indent=2, ensure_ascii=False) + "\n"`. `name` is the
@@ -113,9 +114,15 @@ All 25 units share one file template. Copy an existing unit when adding one.
   and hand-authored minimal files. Match the file you are editing and leave the
   others alone.
 - Node versions the repo was migrated to; treat them as minimums: Set 3.4, IF
-  2.3, AI Agent 3.1, Chat Trigger 1.4, Memory Buffer Window 1.3, Split Out 1.
-  `itemLists` is no longer used. `other/scripts/migrate_workflows_2_28_6.py`
-  shows the exact parameter shapes.
+  2.3, AI Agent 3.1, Chat Trigger 1.4, Memory Buffer Window 1.3, Split Out 1,
+  Message an Agent 3.1. `itemLists` is no longer used.
+  `other/scripts/migrate_workflows_2_28_6.py` shows the exact parameter shapes.
+- On n8n 2.48.5 the Execute Workflow Trigger (1.1) requires
+  `parameters.workflowInputs.values` (field name + type per input). The legacy
+  shape (`{"event": "onReceived"}` only) still imports but the sub-workflow
+  refuses to execute ("At least 1 field is required"). The 05B-Sub files and
+  `26-agents`' FAQ tool carry the new shape; its field names must match the
+  `workflowInputs.mapping` of the caller (`toolWorkflow` / Execute Sub-workflow).
 - Any value containing `{{ }}` must start with `=`, as in `"={{ $json.chatInput }}"`.
   Without the `=`, n8n sends the text literally.
 - Credentials are placeholders:
@@ -125,8 +132,9 @@ All 25 units share one file template. Copy an existing unit when adding one.
 - A node `name` is the join key. It appears in `connections` keys, in link
   targets and in `$('Node Name')` expressions, so rename it in all of them at
   once.
-- 17 of the 22 files have no top-level `id`; n8n creates one on import. Don't
-  invent ids.
+- 17 of the 22 pre-2.48.5 files have no top-level `id`; n8n creates one on
+  import. Don't invent ids. (The unit 26–27 files are hand-authored in the same
+  minimal style — also no top-level `id`, 20 of 25 in total.)
 - LINE workflows need the community node `@aotoki/n8n-nodes-line-messaging`,
   which the Docker stack does not preinstall.
 - `04 - MCP Client.json` hard-codes an external MCP endpoint
@@ -148,7 +156,7 @@ All 25 units share one file template. Copy an existing unit when adding one.
 - The real node-schema migration is commit `096cf77`. Commit `8b154da` is titled
   "Refactor workflow node schemas" but only adds dataset files. The old
   `workflows/` tree and its READMEs are in history up to `8b154da`.
-- The docs say there are 18 solution workflows. There are 22.
+- The docs say there are 18 solution workflows. There are 24.
 - There is no `.gitattributes`. The maintainer's Windows checkout has
   `core.autocrlf=true`, so working-tree text files are mostly CRLF while the
   repo stores LF. Git normalises on commit, so leave line endings alone.

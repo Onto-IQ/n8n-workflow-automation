@@ -1,0 +1,127 @@
+{
+  "name": "01 - Message an Office Assistant",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "📨 **Message an Agent Demo**\n\nเรียก n8n Agent ที่ publish แล้วจากใน workflow\n\n**ก่อนรัน:** เลือก agent ของคุณใน node Message an Agent (ต้อง publish agent ก่อน)\n\nหน่วย 26 — n8n Agents"
+      },
+      "name": "Note: Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        -140
+      ],
+      "id": "note-overview"
+    },
+    {
+      "parameters": {},
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        420,
+        240
+      ],
+      "id": "trigger"
+    },
+    {
+      "parameters": {
+        "content": "❓ **คำถามทดสอบ**\n\nแก้ value ของ `question` เป็นคำถามองค์กรอื่นได้ตามใจ\n(agent จะพยายามตอบจาก FAQ tool ก่อน)"
+      },
+      "name": "Note: Question",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        400
+      ],
+      "id": "note-question"
+    },
+    {
+      "parameters": {
+        "options": {},
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3f2a9c5e-1b4d-4e8a-9c6f-7d2b8a1e5c40",
+              "name": "question",
+              "value": "นโยบายการลาป่วยของบริษัทเป็นอย่างไร",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "name": "Ask the Assistant",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        640,
+        240
+      ],
+      "id": "ask"
+    },
+    {
+      "parameters": {
+        "content": "🤖 **Message an Agent**\n\nยิงข้อความเข้า agent (referenced) — output ได้ `text`, `toolCalls`, `session`\n\n1 message = 1 execution"
+      },
+      "name": "Note: Message",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        900,
+        400
+      ],
+      "id": "note-message"
+    },
+    {
+      "parameters": {
+        "agentSource": "referenced",
+        "agentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "YOUR_AGENT_ID"
+        },
+        "message": "={{ $json.question }}"
+      },
+      "name": "Message an Agent",
+      "type": "n8n-nodes-base.messageAnAgent",
+      "typeVersion": 3.1,
+      "position": [
+        900,
+        240
+      ],
+      "id": "message-agent"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Ask the Assistant",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask the Assistant": {
+      "main": [
+        [
+          {
+            "node": "Message an Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "active": false
+}

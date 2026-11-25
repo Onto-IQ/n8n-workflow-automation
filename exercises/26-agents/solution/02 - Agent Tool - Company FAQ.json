@@ -1,0 +1,113 @@
+{
+  "name": "02 - Agent Tool - Company FAQ",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "🔧 **Workflow Tool: Company FAQ**\n\nให้ n8n Agent เรียกใช้เป็น tool\n\n**ขั้นต่ำที่ต้องทำ:** Publish workflow นี้ แล้วเพิ่มเป็น workflow tool ใน Agent Builder\n\n(workflow tool ต้องขึ้นต้นด้วย trigger \"When Executed by Another Workflow\")"
+      },
+      "name": "Note: Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        -140
+      ],
+      "id": "note-overview"
+    },
+    {
+      "parameters": {
+        "event": "onReceived",
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "question",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        420,
+        240
+      ],
+      "id": "trigger"
+    },
+    {
+      "parameters": {
+        "content": "❓ **สัญญา input**\n\nรับ `question` (string) จาก agent — ตอนแปะ tool ให้ผูก field นี้ให้คำถามของ agent"
+      },
+      "name": "Note: Input",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        420,
+        400
+      ],
+      "id": "note-input"
+    },
+    {
+      "parameters": {
+        "options": {},
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8c41d0a6-52f7-4b3e-a9d1-6e0c5f7b3a11",
+              "name": "topic",
+              "value": "การลาป่วย (Sick Leave)",
+              "type": "string"
+            },
+            {
+              "id": "2e7b4c19-9a35-4f62-b8e4-1d5a6c8f7b22",
+              "name": "answer",
+              "value": "พนักงานลาป่วยได้ 30 วันทำงานต่อปี แจ้งหัวหน้างานก่อนเวลา 10:00 น. ของวันลา และส่งใบรับรองแพทย์เมื่อลาติดต่อกันเกิน 3 วัน ลาเกินสิทธิ์ถูกตัดเป็นลาไม่รับค่าจ้าง",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "name": "Company FAQ",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        680,
+        240
+      ],
+      "id": "faq"
+    },
+    {
+      "parameters": {
+        "content": "📚 **คำตอบ FAQ (ตัวอย่าง)**\n\nข้อมูลตายตัวเพื่อการสอน — ของจริงมักค้นจาก Data Table / Vector Store (หน่วย 20–22)\n\n**Output:** topic, answer"
+      },
+      "name": "Note: FAQ",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        680,
+        400
+      ],
+      "id": "note-faq"
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Company FAQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "active": false
+}

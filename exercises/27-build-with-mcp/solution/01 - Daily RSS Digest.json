@@ -1,0 +1,164 @@
+{
+  "name": "01 - Daily RSS Digest",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "🤖 **สร้างด้วย MCP + Prompt**\n\nผลลัพธ์ปลายทางของ LAB หน่วย 27 — workflow นี้ถูกสร้าง \"ด้วย prompt ล้วน\" ผ่าน Instance-level MCP ไม่ใช่ import\n\nถ้าทำ LAB เสร็จแล้ว เปิดเทียบกับของคุณได้"
+      },
+      "name": "Note: Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        -140
+      ],
+      "id": "note-overview"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "field": "days",
+          "triggerAtHour": 9
+        }
+      },
+      "name": "Every morning 9AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        420,
+        240
+      ],
+      "id": "schedule"
+    },
+    {
+      "parameters": {
+        "content": "⏰ **Schedule Trigger**\n\nทุกวัน 09:00 (ตาม GENERIC_TIMEZONE)"
+      },
+      "name": "Note: Schedule",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        420,
+        400
+      ],
+      "id": "note-schedule"
+    },
+    {
+      "parameters": {
+        "url": "https://hnrss.org/frontpage",
+        "options": {}
+      },
+      "name": "Hacker News Front Page",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        660,
+        240
+      ],
+      "id": "rss"
+    },
+    {
+      "parameters": {
+        "content": "📰 **RSS Read**\n\nคืน 1 item ต่อข่าว — ต้องรวมก่อนส่งเมล ไม่งั้นได้หลายฉบับ!"
+      },
+      "name": "Note: RSS",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        660,
+        400
+      ],
+      "id": "note-rss"
+    },
+    {
+      "parameters": {
+        "jsCode": "// รวมข่าว 5 อันดับแรกเป็นข้อความเดียว\nconst items = $input.all();\nconst lines = items.slice(0, 5).map((item, i) => `${i + 1}. ${item.json.title}\n${item.json.link}`);\nreturn [{ json: { digest: lines.join(\"\n\n\") } }];"
+      },
+      "name": "Build Digest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        900,
+        240
+      ],
+      "id": "digest"
+    },
+    {
+      "parameters": {
+        "content": "🧮 **Code: Build Digest**\n\nรวม 5 ข่าวแรกเป็น 1 item เดียว — จุดที่มือใหม่พลาดบ่อย (Gmail ส่ง 1 ฉบับต่อ 1 item)"
+      },
+      "name": "Note: Digest",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        900,
+        400
+      ],
+      "id": "note-digest"
+    },
+    {
+      "parameters": {
+        "sendTo": "YOUR_EMAIL",
+        "subject": "📰 Daily Digest",
+        "emailType": "text",
+        "message": "=ข่าวเด่นวันนี้ (Hacker News)\n\n{{ $json.digest }}",
+        "options": {}
+      },
+      "name": "Send Digest Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1140,
+        240
+      ],
+      "id": "gmail",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_GMAIL_CREDENTIAL",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every morning 9AM": {
+      "main": [
+        [
+          {
+            "node": "Hacker News Front Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hacker News Front Page": {
+      "main": [
+        [
+          {
+            "node": "Build Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Digest": {
+      "main": [
+        [
+          {
+            "node": "Send Digest Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "active": false
+}

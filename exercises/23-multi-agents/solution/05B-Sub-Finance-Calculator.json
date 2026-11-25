@@ -16,7 +16,19 @@
     },
     {
       "parameters": {
-        "event": "onReceived"
+        "event": "onReceived",
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "amount",
+              "type": "string"
+            },
+            {
+              "name": "policyPassed",
+              "type": "string"
+            }
+          ]
+        }
       },
       "name": "Execute Workflow Trigger",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
