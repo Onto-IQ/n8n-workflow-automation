@@ -14,3 +14,6 @@ Thumbs.db
 _tools/
 _deck_inspect/
 .zcode/
+
+# MCP config มี auth token (เก็บไว้เครื่องเท่านั้น)
+.mcp.json

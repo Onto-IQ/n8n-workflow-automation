@@ -75,7 +75,7 @@ Workshop หลัก 3 ชิ้น: **#1** ระบบรับเรื่�
 
 ## 6. Slide deck
 
-Deck ประกอบการสอน (258 หน้า หลังตัดหน้าโฆษณา): [`other/slides/N8N-L1-Onto-IQ-v6.pptx`](other/slides/) — ทุก lesson ระบุช่วง slide อ้างอิงไว้ในตารางด้านบนของหน้า lesson
+Deck ประกอบการสอน (258 หน้า หลังตัดหน้าโฆษณา): [`other/slides/N8N-L1-Onto-IQ-v7.pptx`](other/slides/) — ทุก lesson ระบุช่วง slide อ้างอิงไว้ในตารางด้านบนของหน้า lesson
 
 ## 7. Course description (JD)
 

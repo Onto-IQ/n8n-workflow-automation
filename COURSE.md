@@ -23,6 +23,7 @@ contract: tools read them instead of guessing paths. If you move a folder,
 update the matching `*_path` field. `other/scripts/check_structure.sh` fails
 when a required key is missing.
 
-หมายเหตุ (Onto-IQ): deck อยู่ที่ `other/slides/N8N-L1-Onto-IQ-v6.pptx` (258 หน้า,
-ตัดหน้าโฆษณาและเครื่องหมายลิขสิทธิ์เดิมออกแล้ว) เนื้อหาอัปเดตตาม n8n 2.x และ
+หมายเหตุ (Onto-IQ): deck อยู่ที่ `other/slides/N8N-L1-Onto-IQ-v7.pptx` (258 หน้า,
+จัดลำดับตาม repo, ภาพหน้าจออัปเดตจาก n8n 2.48.5 + Google Cloud ปี 2026) ไฟล์ v6 เก็บไว้เป็นฐานอ้างอิง
+เนื้อหาอัปเดตตาม n8n 2.x และ
 brand refresh 2026 — สรุปอยู่ใน `other/reference/n8n-2026-rebrand-and-2x.md`
