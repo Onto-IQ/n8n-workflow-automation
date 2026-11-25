@@ -10,6 +10,10 @@
 
 Gmail, Sheets, Calendar, Docs, Drive ใช้ OAuth2 เหมือนกันทั้งชุด — สร้าง credential ครั้งเดียว ใช้ซ้ำได้ทุก node Google บทนี้เดินทีละขั้นบน **Google Cloud Console** (UI ปี 2026 จัดอยู่ภายใต้ Google Auth Platform) จนได้ Client ID + Client Secret มาเชื่อมใน n8n
 
+## Credential คืออะไร
+
+Credential คือที่เก็บกลางของ secret (API key / OAuth2 / ฐานข้อมูล) ของ n8n — ปลอดภัยกว่าการยัด key ใน node, หมุนเวียน (rotate) ง่าย และ reuse ข้าม workflow ได้ ประเภทที่เจอบ่อย: API key/token, OAuth2 (n8n refresh token ให้เอง) และ database
+
 ## ขั้นเตรียมใน Google Cloud Console
 
 1. **สร้าง Project** — เข้า console.cloud.google.com → เลือก/สร้าง project (ในเดคใช้ชื่อแนว `n8n-student-course`) ยืนยันว่าอยู่ใน project ที่ถูกตลอด (ดูมุมบน)
@@ -25,11 +29,20 @@ Gmail, Sheets, Calendar, Docs, Drive ใช้ OAuth2 เหมือนกั�
 2. วาง Client ID/Secret → **Sign in with Google** → ยินยัมสิทธิ์ → กลับมาสถานะ Account connected
 3. ชีต test: ให้ n8n อ่าน Google Sheet ตัวอย่างได้ 1 แถว = เสร็จ
 
+## Demo / walkthrough
+
+เปิดสองแท็บคู่กัน: **Google Cloud Console** ด้านหนึ่ง และหน้าสร้าง credential ใน **n8n** อีกด้าน (ค้างไว้เลย) แล้วเดินทีละขั้นตามหัวข้อด้านบน — ทุกครั้งที่ n8n ขอค่า (Redirect URI) ให้ก๊อปจากแท็บ n8n ไปวางใน Console ทันที
+
 ## ข้อควรระวัง
 
 - Redirect URI ผิดแม้ตัวเดียว = error `redirect_uri_mismatch` — ก๊อปจาก n8n ตรง ๆ
 - ลืม Enable API ที่จะใช้ = error 403 ตอนรัน node
 - ห้าม commit Client Secret ลง repo — เก็บใน n8n credential เท่านั้น
+
+## Key takeaways
+
+- ลืม Publish App → token หมดอายุทุก 7 วัน; ลืม/ผิด Redirect URL → connect ไม่ผ่านตั้งแต่แรก
+- Client ID + Secret ชุดเดียวใช้ได้ทุก service ของ Google Workspace
 
 ## ลงมือทำ
 
@@ -40,7 +53,10 @@ Gmail, Sheets, Calendar, Docs, Drive ใช้ OAuth2 เหมือนกั�
 1. ทำไมต้อง Publish app ก่อนใช้งานจริง — ถ้าไม่ publish เกิดอะไรขึ้นหลังใช้ไป 7 วัน
 2. เจอ `redirect_uri_mismatch` ตรวจจุดไหนก่อน
 3. สิทธิ์ scope ที่ credential ขอมีผลอย่างไรกับการอนุมัติของผู้ใช้
+4. OAuth Redirect URL เอามาจากที่ไหน
+5. ทำไมต้อง Enable APIs เฉพาะตัวที่จะใช้
 
 ## Next
 
 → [exercises/09-google-workspace-credential](../../exercises/09-google-workspace-credential/README.md) — ต่อ Google Workspace ให้ n8n ได้จริง
+→ บทถัดไป: [10 — Workshop #1: ฟอร์ม → Google Workspace + LINE](../10-workshop-form-to-workspace-line/README.md)

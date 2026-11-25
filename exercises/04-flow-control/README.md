@@ -15,5 +15,5 @@
 - สร้างระบบจัดเกรดนักเรียน: ข้อมูลจำลอง → IF (VIP?) → Switch (score) → Merge
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/04-flow-control/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/04-flow-control/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

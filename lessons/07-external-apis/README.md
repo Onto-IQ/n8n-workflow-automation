@@ -7,13 +7,13 @@
 | เวลาโดยประมาณ | ~40 นาที |
 | อ้างอิง slide | N8N-L1-Onto-IQ-v7 หน้า 61 |
 
-n8n มี integration สำเร็จรูปเยอะ แต่บริการภายในองค์กรหรือ API ใหม่ ๆ ยังต้องเรียกเอง — **HTTP Request node** คือกุญแจกัญชาสากล เรียกได้ทุก API ที่พูด HTTP บทนี้ฝึกยิง GET/POST จริง และอ่าน response ให้เป็น
+n8n มี integration สำเร็จรูปเยอะ แต่บริการภายในองค์กรหรือ API ใหม่ ๆ ยังต้องเรียกเอง — **HTTP Request node** คือกุญแจกัญชาสากล เรียกได้ทุก API ที่พูด HTTP และเป็นพื้นฐานสำคัญก่อนสร้าง AI Agent ที่ใช้ tools บทนี้ฝึกยิง GET/POST จริง และอ่าน response ให้เป็น
 
 ## องค์ประกอบของ HTTP Request
 
 - **Method** — GET (อ่าน), POST (สร้าง), PUT/PATCH (แก้), DELETE
 - **URL** — ปลายทาง ใส่ expression ได้ เช่นดึง id จาก node ก่อนหน้า
-- **Authentication** — ถ้าบริการต้องยืนยันตัว สร้าง credential (Generic Credential Type: Header Auth / Query Auth / Basic) แล้วเลือกใช้ ห้ามยัด key ลง URL ตรง ๆ
+- **Authentication** — ถ้าบริการต้องยืนยันตัว สร้าง credential (Generic Credential Type: Header Auth / Query Auth / Basic / Bearer Token เช่น `X-API-KEY`) แล้วเลือกใช้ ห้ามยัด key ลง URL ตรง ๆ
 - **Body (POST)** — ส่งเป็น JSON โดยใช้ expression แทรกค่าจาก node ก่อนหน้า เช่น `{{ $json.name }}`
 - **Response** — รูปแบบ JSON จะถูกแปลงเป็น items ให้อัตโนมัติ พร้อมต่อด้วย node อื่น
 
@@ -23,16 +23,22 @@ n8n มี integration สำเร็จรูปเยอะ แต่บร�
 - ทดสอบ API นอก n8n ด้วย httpbin.org หรือ Postman ก่อน ช่วยแยกว่าผิดที่ request หรือที่ n8n
 - API ที่จำกัดอัตรา: ใช้ Loop ทีละ batch (หน่วย 05) แล้วเว้นจังหวะด้วย Wait
 
+## Key takeaways
+
+- HTTP Request node คือสวิสอาร์มีนีฟ — ต่อได้ทุกบริการที่มี REST API
+
 ## ลงมือทำ
 
-เปิด [exercises/07-external-apis/LAB.md](../../exercises/07-external-apis/LAB.md) — import `solution/05-Working-with-External-APIs.json` ยิง GET ไป API คำคมสาธารณะ แล้ว POST ข้อมูลขึ้น httpbin ดูรำสะท้อน
+เปิด [exercises/07-external-apis/LAB.md](../../exercises/07-external-apis/LAB.md) — import `solution/05-Working-with-External-APIs.json` เดินสาย GET มุกจาก API สาธารณะ → Set แยก setup/punchline → POST ขึ้น httpbin: ยิง GET ไป `official-joke-api.appspot.com/random_joke` (ไม่ต้องมี key) แล้ว POST ข้อมูลขึ้น httpbin ดูรำสะท้อน
 
 ## Check understanding
 
 1. ต่างกันอย่างไรระหว่างเก็บ API key ใน credential กับพิมพ์ใส่ header เองใน URL
 2. ได้รับ 401 จาก API — สาเหตุที่พบบ่อยที่สุดคืออะไร ตรวจอย่างไร
 3. จะส่งค่าจาก node ก่อนหน้าไปใน body ของ POST ได้อย่างไร
+4. Bearer token ใส่ตรงไหนของ HTTP Request node
 
 ## Next
 
 → [exercises/07-external-apis](../../exercises/07-external-apis/README.md) — ยิง GET/POST จริงและอ่าน response
+→ บทถัดไป: [08 — Webhooks & Triggers](../08-webhooks/README.md)

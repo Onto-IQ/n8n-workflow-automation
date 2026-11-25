@@ -15,5 +15,5 @@
 - agent ที่เลือกใช้ Calculator/Wikipedia ได้ถูกงาน
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/19-agent-with-tools/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/19-agent-with-tools/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

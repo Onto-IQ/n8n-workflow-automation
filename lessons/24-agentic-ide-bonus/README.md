@@ -29,6 +29,14 @@ n8n มีปุ่มพร้อมขั้นตอนในตัว: **Set
 
 **งาน: เลือกหนึ่ง workflow จากที่เรียนมาแล้ว สร้างมันใหม่ผ่าน Agentic IDE** — เริ่มจาก describe ที่ต้องการเป็นภาษาคน ให้ AI วาง node ต่อ connection ตั้ง credential ผ่านชื่อ แล้วรันทดสอบ จากนั้นประเมิน: AI วางผิดตรงไหน, แก้ด้วยคำสั่งไหน, และเทียบเวลากับการสร้างด้วยมือ
 
+## Demo / walkthrough
+
+ติดตั้ง MCP ใน IDE ที่ตัวเองใช้ → สั่งสร้าง workflow ง่าย ๆ ด้วยภาษาคน หนึ่งคำสั่ง → กลับมาดูที่ canvas ของ n8n จะเห็น node โผล่ขึ้นมาจริง
+
+## Key takeaways
+
+- ผู้เชี่ยวชาญ n8n ยุคใหม่คือคนที่ออกแบบระบบเป็น แล้วให้ AI ช่วยพิมพ์
+
 ## ลงมือทำ
 
 เปิด [exercises/24-agentic-ide-bonus/LAB.md](../../exercises/24-agentic-ide-bonus/LAB.md) — ต่อ MCP ให้เครื่องมือที่ตัวเองใช้ แล้วทำ challenge ตามเวลา 45–60 นาที และจด lesson learned
@@ -38,7 +46,9 @@ n8n มีปุ่มพร้อมขั้นตอนในตัว: **Set
 1. MCP ในบริบทนี้ช่วยให้ Agentic IDE ทำอะไรได้บ้างกับ n8n
 2. ขั้น authenticate (OAuth หรือ API key) ทำเมื่อไหร่ และเก็บ key อย่างไรให้ปลอดภัย
 3. งานแบบไหนให้ AI สร้างแทนได้ดี งานไหนควรคุมเอง
+4. n8n API key ให้สิทธิ์อะไรบ้างกับ instance ของเรา
 
 ## Next
 
 → [exercises/24-agentic-ide-bonus](../../exercises/24-agentic-ide-bonus/README.md) — challenge สร้าง flow ด้วย AI
+→ บทถัดไป: [25 — Self-Hosting n8n (Docker + Cloudflare)](../25-self-hosting/README.md)

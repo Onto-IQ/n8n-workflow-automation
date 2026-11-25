@@ -15,5 +15,5 @@
 - เชื่อม Google Workspace เข้า n8n สำเร็จ 1 บริการ (Gmail) และพร้อมใช้ที่เหลือ
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/09-google-workspace-credential/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/09-google-workspace-credential/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

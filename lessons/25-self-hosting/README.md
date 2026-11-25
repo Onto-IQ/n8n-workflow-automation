@@ -16,6 +16,12 @@
 - ฟีเจอร์เบราว์เซอร์ที่ต้อง secure context (chat, notifications) ใช้ได้เฉพาะ HTTPS หรือ localhost
 - ข้อมูลที่ไม่เข้ารหัสเสี่ยง MITM — โปรเจกต์นี้จึงใช้ **Cloudflare Tunnel** ให้ HTTPS โดยไม่ต้องจัด certificate เอง
 
+## ทางเลือกการติดตั้ง
+
+- **Docker** (แนะนำ) — isolate สะอาด อัปเกรดง่ายแค่เปลี่ยน image tag
+- **Direct npm/PM2** — สเปกเครื่องต่ำได้ แต่เสี่ยงปัญหา permission
+- **Desktop/local npm** — สำหรับ dev ลองของเท่านั้น ไม่ใช่ production
+
 ## ขั้นเตรียม Domain + Cloudflare
 
 1. **จดโดเมน** — ผ่าน namecheap.com (หรือผู้ให้บริการอื่น)
@@ -50,6 +56,11 @@ cp -r data data-backup-$(date +%Y%m%d)             # สำรอง
 - **Restore**: นำโฟลเดอร์กลับมาเป็น `data/` ใช้ `.env` เดิม (อย่างน้อย POSTGRES_USER/PASSWORD/DB) แล้ว `docker compose up -d`
 - อัปเกรด = เปลี่ยน image tag ใน `docker-compose.yml` (เช่น `n8nio/n8n:2.28.6`) — อ่าน Migration Report ก่อนขยับ version ใหญ่
 
+## Key takeaways
+
+- HTTPS ไม่ใช่ออปชัน — webhook ของทุกบริการต้องเป็น `https://`
+- ใช้ `http://localhost:5678` สำหรับสร้าง flow, โดเมน `https://` ของตัวเองสำหรับ webhook จริง
+
 ## ลงมือทำ
 
 เปิด [exercises/25-self-hosting/LAB.md](../../exercises/25-self-hosting/LAB.md) — ติดตั้ง Docker, ตั้ง `.env`, รัน compose, ตั้ง owner, และทดสอบเข้าผ่านโดเมน HTTPS ของตัวเอง
@@ -59,6 +70,7 @@ cp -r data data-backup-$(date +%Y%m%d)             # สำรอง
 1. ทำไม self-host ต้องมี Cloudflare Tunnel — ถ้าไม่มี อะไรเสียก่อน
 2. `data/n8n/` กับ `data/postgres/` เก็บอะไร และทำไม backup ต้องครบคู่
 3. WEBHOOK_URL ผิดมีผลกับ workflow แบบไหน
+4. ถ้า Encryption Key หาย จะเกิดอะไรขึ้นกับ credentials ที่เก็บไว้
 
 ## Next
 

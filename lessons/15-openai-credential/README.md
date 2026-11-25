@@ -8,15 +8,15 @@
 | อ้างอิง slide | N8N-L1-Onto-IQ-v7 หน้า 144–149 |
 | คู่มือเต็ม | [other/docs/credentials/openai-api.md](../../other/docs/credentials/openai-api.md) |
 
-OpenAI ใช้กับ AI Agent ขั้นสูง (GPT-4o ขึ้นไป) และมีค่าใช้จ่ายจริง — บทนี้สร้าง credential ให้ถูกตั้งแต่ต้น ตั้ง **Usage limit กันเงินหาย** และยกระดับ **Auto-recharge** อย่างเข้าใจ
+OpenAI ใช้กับ AI Agent ขั้นสูง (GPT-4o ขึ้นไป) และมีค่าใช้จ่ายจริง — API ไม่ฟรีเหมือนแชทเว็บ คิดเงินตาม token บทนี้สร้าง credential ให้ถูกตั้งแต่ต้น ตั้ง **Usage limit กันเงินหาย** และยกระดับ **Auto-recharge** อย่างเข้าใจ
 
 ## ขั้นบน platform.openai.com
 
 1. สมัคร/ล็อกอิน **platform.openai.com** (ไม่ใช่ ChatGPT — คนละระบบ; API key ของ ChatGPT Plus ไม่ใช้กับ API ได้)
-2. **ตั้งค่าการชำระเงิน (Billing)** → Add payment details (บัตร หรือยูสส์ผ่าน Stripe) → เติมเงินขั้นต่ำ $5 สำหรับ Prepaid หรือเปิด Postpaid ตามที่เลือก
-3. **ตั้ง Usage limits** — กำหนดเพดานต่อเดือน + ยืนยันด้วยอีเมล กันบิลพุ่งจากโค้ดวิ่งผิดพลาด
+2. **ตั้งค่าการชำระเงิน (Billing)** → เลือก Individual/Company → Add payment details (บัตร หรือยูสส์ผ่าน Stripe) → เติมเงินขั้นต่ำ $5 สำหรับ Prepaid หรือเปิด Postpaid ตามที่เลือก
+3. **ตั้ง Usage limits** — กำหนดเพดานต่อเดือน (เช่น แจ้งเตือนที่ $10 และตัดการใช้ที่ $15) + ยืนยันด้วยอีเมล กันบิลพุ่งจากโค้ดวิ่งผิดพลาด
 4. **Auto-recharge** — เติมอัตโนมัติเมื่อยอดถึงขั้นต่ำ สะดวกแต่ต้องมี limit คู่กันเสมอ (กับดักที่วางไว้ในคอร์ส: เปิด Auto-recharge ค้างโดยไม่จำกัด = บิลบาน)
-5. **สร้าง API key** — หน้า API keys → Create new secret key → ตั้งชื่อ (เช่น n8n-course) → เลือก Project/Permissions → **คัดลอกเก็บทันที** (แสดงครั้งเดียว)
+5. **สร้าง API key** — หน้า API keys → Create new secret key → ตั้งชื่อ (เช่น n8n-course) → เลือก Project/Permissions → **คัดลอกเก็บทันที** (แสดงครั้งเดียว key ขึ้นต้น `sk-proj-...`)
 
 ## เชื่อมใน n8n
 
@@ -30,6 +30,10 @@ OpenAI ใช้กับ AI Agent ขั้นสูง (GPT-4o ขึ้นไ
 - Prepaid หมดยอด = API กลับ 429 กลางงาน — จุดให้ตรวจเวลา workflow รันเป็นระยะแล้วพัก
 - เก็บ key ไว้ใน OpenAI dashboard แบบจำกัด project/permission เมื่อใช้งานจริง
 
+## Key takeaways
+
+- ตั้ง Usage limit **ก่อน**สร้าง key และเริ่มใช้เสมอ — กันบิลพุ่งจาก loop ที่ผิดพลาด
+
 ## ลงมือทำ
 
 เปิด [exercises/15-openai-credential/LAB.md](../../exercises/15-openai-credential/LAB.md) — เดินครบทั้ง billing/limit/key แล้วผูก credential กับ node OpenAI Chat Model ใน n8n
@@ -38,8 +42,9 @@ OpenAI ใช้กับ AI Agent ขั้นสูง (GPT-4o ขึ้นไ
 
 1. ChatGPT Plus กับ OpenAI API ต่างกันอย่างไร
 2. Usage limit ช่วยอะไร และควรตั้งก่อนหรือหลังสร้าง key เพราะอะไร
-3. Auto-recharge เปิดเมื่อไหร่จึงปลอดภัย
+3. Auto-recharge เปิดเมื่อไหร่จึงปลอดภัย — และควรเปิดหรือปิดช่วงเรียน เพราะอะไร
 
 ## Next
 
 → [exercises/15-openai-credential](../../exercises/15-openai-credential/README.md) — ต่อ OpenAI พร้อมกันเงินหาย
+→ บทถัดไป: [16 — Credential OpenRouter](../16-openrouter-credential/README.md)

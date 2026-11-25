@@ -15,5 +15,5 @@
 - Gemini credential พร้อมใช้ + บอท LINE ตอบกลับได้
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/14-google-ai-credential/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/14-google-ai-credential/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

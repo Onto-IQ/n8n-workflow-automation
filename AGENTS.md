@@ -18,7 +18,7 @@ automated check is a folder-structure script.
 
 ```text
 README.md COURSE.md SETUP.md CONTRIBUTING.md CHANGELOG.md
-lessons/NN-slug/      README.md + LESSON.md                      theory
+lessons/NN-slug/      README.md                                  theory (full chapter, one file)
 exercises/NN-slug/    README.md + LAB.md + starter/ + solution/  hands-on; solution/ holds workflow .json
 org/                  topic-family notes (onto-iq.md, datafabric-academy.md)
 other/                everything that is not a lesson or exercise
@@ -66,7 +66,8 @@ cp -r data data-backup-$(date +%Y%m%d)  # back up
 
 - Units come in pairs with the same folder name: `lessons/NN-slug/` and
   `exercises/NN-slug/`. Names must match `^[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$`.
-- A lesson folder needs `README.md` and `LESSON.md`. An exercise folder needs
+- A lesson folder needs `README.md` only (the full lesson chapter, merged
+  self-study style). An exercise folder needs
   `README.md`, `LAB.md`, `starter/` and `solution/`. Keep empty `starter/` and
   `solution/` folders with a `.gitkeep`.
 - The root docs, `org/`, `other/` and its subfolders are required by name.
@@ -89,15 +90,14 @@ cp -r data data-backup-$(date +%Y%m%d)  # back up
   marks (`org/onto-iq.md`).
 - When you add, rename or remove a `solution/*.json`, update every place that
   names it: the `ไฟล์ workflow สำเร็จรูป:` list in the exercise `README.md`
-  and any `LAB.md` or `LESSON.md` that refers to it. A new unit also needs a
+  and any `LAB.md` that refers to it. A new unit also needs a
   row in the root `README.md` outline.
 
 All 25 units share one file template. Copy an existing unit when adding one.
 
 | File | Sections, in order |
 |---|---|
-| `lessons/NN-slug/README.md` | title `# NN — topic`, link to the paired exercise, table (lesson, exercise, time, slide range), Objectives, Prerequisites, Next |
-| `lessons/NN-slug/LESSON.md` | Concepts, Demo / walkthrough, Key takeaways, Check understanding |
+| `lessons/NN-slug/README.md` | title `# NN — topic`, table (lesson, exercise, time, slide range), intro paragraph, content sections (topic-named), Demo / walkthrough, Key takeaways, ลงมือทำ, Check understanding, Next (paired exercise + next unit) |
 | `exercises/NN-slug/README.md` | link to the paired lesson, table (LAB, starter, solution), `ไฟล์ workflow สำเร็จรูป:` list, Goal, Before you start |
 | `exercises/NN-slug/LAB.md` | Goal, Setup (numbered steps), Check your work, Stretch (optional) |
 
@@ -136,9 +136,11 @@ All 25 units share one file template. Copy an existing unit when adding one.
 ## Gotchas
 
 - The maintainer's checkout has a local-only, git-ignored generator,
-  `_tools/build_structure.py`. When run, it rewrites all 100 lesson and exercise
+  `_tools/build_structure.py`. When run, it rewrites all lesson and exercise
   Markdown files, the deck, `check_structure.sh` and both CI YAML files, which
-  overwrites hand edits to those files.
+  overwrites hand edits to those files — as of the LESSON.md merge it would also
+  resurrect the two-file README+LESSON layout and recreate `LESSON.md` files.
+  Do not run it without updating it first.
 - `other/scripts/migrate_workflows_2_28_6.py` is a stale one-off. Its
   `WORKFLOWS_DIR` resolves to `other/workflows`, which no longer exists, so it
   does nothing. If you repoint and re-run it, it rewrites workflow files in
@@ -184,7 +186,7 @@ Verified in the files. Don't copy these patterns, and fix them only when asked.
 | Changing | Read first |
 |---|---|
 | Units, folders, course metadata | `CONTRIBUTING.md`, `COURSE.md` |
-| Lesson or exercise content | `other/docs/INSTRUCTOR.md` (it lists the pitfalls the course deliberately plants; don't fix them out), then the paired `LESSON.md` and `LAB.md` |
+| Lesson or exercise content | `other/docs/INSTRUCTOR.md` (it lists the pitfalls the course deliberately plants; don't fix them out), then the unit's lesson `README.md` and the paired `LAB.md` |
 | Workflow JSON or n8n-version-specific text | `other/reference/n8n-2026-rebrand-and-2x.md`, `other/docs/credentials/README.md` |
 | `docker-compose.yml`, `.env.example` | `SETUP.md`, `lessons/25-self-hosting/` |
 | Course description | `other/docs/JD.md`. Its source of truth is an Obsidian file outside the repo (`jd_source` in `COURSE.md`). |

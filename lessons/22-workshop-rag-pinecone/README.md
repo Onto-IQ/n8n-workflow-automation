@@ -24,12 +24,12 @@ Workshop ปิดท้าย: **RAG ระดับ production บน Pinecone
 |---|---|---|
 | การเก็บข้อมูล | ในหน่วย RAM (session นั้น) | ระบบ cloud ของ Pinecone (ถาวร) |
 | ความถนัด | ตัวอย่าง RAG สาธิต ทดสอบเร็ว | Production: รองรับข้อมูลจำนวนมากและผู้ใช้หลายคน |
-| ความถนัด (persist) | เป็นระยะ (หมดเมื่อ restart) | การ (ข้อมูลไม่หาย) |
+| ความถาวร (persist) | ชั่วคราว (หายเมื่อ restart) | ถาวร (ข้อมูลไม่หาย) |
 | ความยืดหยุ่น | จำกัด (resource เครื่อง) | ขยายอัตโนมัติ (scale) |
-| ความเร็ว | แช่ง (Zero Setup) | ยืดหยุ่น (มี network hop) |
-| หลังไม่คิด | ฟรี (ในตัว) | มี Free Tier |
+| ความเร็ว | เร็วมาก (Zero Setup) | ยืดหยุ่น (มี network hop) |
+| ราคา | ฟรี (ในตัว) | มี Free Tier |
 
-**เลือกใช้**: In-Memory สำหรับ prototyping/สอน (session สั้น ข้อมูลหลายไม่สำคัญ) Pinecone เมื่อต้อง production (ข้อมูลถาวร หลายผู้ใช้ อัปโหลดเอกสารใหม่บ่อย) — อัปเกรดยังไงก็ได้: เปลี่ยน Vector Store กับเพิ่ม credential Pinecone
+**เลือกใช้**: In-Memory สำหรับ prototyping/สอน (session สั้น ข้อมูลหายก็ไม่สำคัญ) Pinecone เมื่อต้อง production (ข้อมูลถาวร หลายผู้ใช้ อัปโหลดเอกสารใหม่บ่อย) — อัปเกรดยังไงก็ได้: เปลี่ยน Vector Store กับเพิ่ม credential Pinecone
 
 ## ขั้นเตรียม Pinecone (Credential สำหรับ Vector DB)
 
@@ -40,7 +40,7 @@ Workshop ปิดท้าย: **RAG ระดับ production บน Pinecone
 
 ## สอง pipeline ใน workflow เฉลย (Load + Query)
 
-- **Indexing Pipeline** — Manual Trigger → ค้นหาไฟล์ใน Drive Folder → Download (binary) → Default Data Loader (chunk) → Embeddings OpenAI → **Vector Store (Pinecone Insert)** — ระวังตั้ง Dimension ให้ตรงโมเดล
+- **Indexing Pipeline** — Manual Trigger → ค้นหาไฟล์ใน Drive Folder → Download (binary) → Default Data Loader (chunk อัตโนมัติ) → Embeddings OpenAI → **Vector Store (Pinecone Insert)** — ระวังตั้ง Dimension ให้ตรงโมเดล
 - **Query Pipeline** — Chat Trigger (รับคำถามจาก chat) → AI Agent (The Brain) + System Prompt "ตอบพื้นฐานเฉพาะที่มีในเอกสาร" → **Pinecone Query (as Tool)** — Top K = 5
 
 ## จุดตายที่ห้ามพลาด (Critical Settings)
@@ -52,6 +52,10 @@ Workshop ปิดท้าย: **RAG ระดับ production บน Pinecone
 | Dimensions | 1536 (ต้องตรงกับ embedding model) |
 | Credentials | OpenAI, Pinecone API, Google Drive OAuth2 |
 
+## Key takeaways
+
+- เลือก store ตามงาน: ทดลอง/สอนใช้ in-memory, ของจริงใช้ Pinecone — และ embedding model ต้องเป็นตัวเดียวกันทั้ง Load และ Query
+
 ## ลงมือทำ
 
 เปิด [exercises/22-workshop-rag-pinecone/LAB.md](../../exercises/22-workshop-rag-pinecone/LAB.md) — สมัคร/ตั้ง Pinecone ให้ครบ, รัน Load, แล้วถามผ่าน Chat ให้ตอบจากเอกสารจริง
@@ -61,7 +65,9 @@ Workshop ปิดท้าย: **RAG ระดับ production บน Pinecone
 1. In-Memory กับ Pinecone ใช้ตัวไหนเมื่อไหร่ — เกณฑ์ตัดสินสองข้อ
 2. Dimension ไม่ตรงกับ embedding model เกิดอะไรขึ้น ตรวจจากไหน
 3. ทำไม Load กับ Query ต้องใช้ embedding model เดียวกัน
+4. ถ้า Load ใช้ text-embedding-3-small แต่ Query ใช้ embedding-002 จะเกิดอะไรขึ้น
 
 ## Next
 
 → [exercises/22-workshop-rag-pinecone](../../exercises/22-workshop-rag-pinecone/README.md) — RAG ระดับ production จริงบน Pinecone
+→ บทถัดไป: [23 — Multi-Agents (Linear vs Orchestration)](../23-multi-agents/README.md)

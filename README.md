@@ -89,7 +89,7 @@ Deck ประกอบการสอน (258 หน้า หลังตั�
 ├── SETUP.md                 # สิ่งที่ต้องเตรียมก่อนวันแรก
 ├── CONTRIBUTING.md          # วิธีเพิ่ม/แก้เนื้อหา
 ├── CHANGELOG.md
-├── lessons/NN-slug/         # ทฤษฎี: README.md + LESSON.md
+├── lessons/NN-slug/         # บทเรียนครบใน README.md เดียว (อ่านแล้วทำเองได้)
 ├── exercises/NN-slug/       # ลงมือทำ: README.md + LAB.md + starter/ + solution/
 ├── org/                     # โน้ต topic-family ขององค์กร (onto-iq / datafabric-academy)
 ├── other/

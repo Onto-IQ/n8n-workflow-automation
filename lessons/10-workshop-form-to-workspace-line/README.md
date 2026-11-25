@@ -6,7 +6,7 @@
 | ลงมือทำ | [exercises/10-workshop-form-to-workspace-line](../../exercises/10-workshop-form-to-workspace-line/README.md) |
 | เวลาโดยประมาณ | ~90 นาที |
 | อ้างอิง slide | N8N-L1-Onto-IQ-v7 หน้า 85–92 |
-| เฉลย | `exercises/10-.../solution/02 - Form to Google Workspace & LINE.json` |
+| เฉลย | `exercises/10-.../solution/02 - Form to Google Workspace &amp; LINE.json` |
 
 Workshop แรกคือการประกอบทุกอย่างที่เรียนมาเป็น **ระบบรับเรื่องจริง**: ลูกค้ากรอกฟอร์ม → ระบบบันทึกลง Sheets, สร้างนัดใน Calendar, เขียนรายงานเป็น Docs, สำรองไฟล์ลง Drive และถ้าเรื่องด่วน — แจ้งทีมทาง **LINE** ทันที นี่คือ workflow ขนาดจริงที่องค์กรใช้ได้ทันที
 
@@ -15,7 +15,7 @@ Workshop แรกคือการประกอบทุกอย่าง�
 1. **Collect — n8n Form Trigger** สร้างฟอร์มรับข้อมูล (ชื่อ อีเมล เบอร์โทร หัวข้อ รายละเอียด ความเร่งด่วน) ใช้ dropdown กำหนดค่าความเร่งด่วนเพื่อ validation; ตั้ง Respond Mode เป็น "Response Node" เพื่อโชว์หน้าขอบคุณเอง
 2. **Process — Code node ("The Brain")** mapping field, จัดรูปวันที่เป็น Timestamp, และคำนวณ priority จากคำสำคัญ (ฉุกเฉิน/ด่วนมาก → HIGH)
 3. **Store & Create** — Append ลง **Sheets** (ทุก transaction เข้าฐานข้อมูล), **IF "Has Appointment?"** จริง → สร้าง **Calendar Event** พร้อมเชิญผู้ส่งทางอีเมล, สร้าง **Docs** รายงานสรุป (เขียน Markdown ใน content ได้), สำรองข้อความเป็น .txt ลง **Drive** (เก็บ Folder ID จาก URL ของโฟลเดอร์)
-4. **Notify — LINE Push Message** เงื่อนไข "High Priority?" จริง → ส่งแจ้งทีมทันที ผ่าน Push Message; สุดท้าย Respond หน้าขอบคุณ
+4. **Notify — LINE Push Message** เงื่อนไข "High Priority?" จริง → ส่งแจ้งทีมทันที ผ่าน Push Message (แจ้งเฉพาะเคสเร่ง ลด noise ในกลุ่ม LINE); สุดท้าย Respond หน้าขอบคุณ
 
 ## คำแนะนำจากท้องสนาม
 
@@ -24,6 +24,14 @@ Workshop แรกคือการประกอบทุกอย่าง�
 - กำหนด **Drive Folder ID** ให้ถูกโฟลเดอร์ (ก๊อปจาก URL ตอนเปิดโฟลเดอร์นั้น)
 - Conditional logic ควรอยู่บน IF node แยกต่างหาก ไม่ฝังใน Code node ล้วน — อ่าน flow ง่ายกว่า
 - ทดสอบฟอร์มด้วยการกด Execute workflow แล้วเปิดฟอร์ม preview
+
+## Demo / walkthrough
+
+อีกวิธีเรียนรู้ที่เร็ว: import เฉลยจาก `solution/` แล้ว**ไล่อ่านทีละบล็อกก่อนรันจริง** — เทียบทีละ node กับสถาปัตยกรรม 4 ขั้นด้านบน จะเห็นว่าข้อมูลเปลี่ยนรูปตรงไหน
+
+## Key takeaways
+
+- จากฟอร์มใบเดียว กระจายไป 6 ปลายทางอัตโนมัติ — แพตเทิรับเรื่อง / จอง / ลงทะเบียนใช้ซ้ำได้ทั่วองค์กร
 
 ## ลงมือทำ
 
@@ -34,7 +42,9 @@ Workshop แรกคือการประกอบทุกอย่าง�
 1. ข้อมูลไหนควรอยู่ใน Sheets และไหนควรอยู่ใน Docs — เกณฑ์ตัดสิน
 2. ถ้าผู้ใช้ไม่ระบุวันนัดหมาย flow จะข้าม node ไหน ด้วยเงื่อนไขอะไร
 3. LINE แจ้งเฉพาะเคส HIGH — ถ้าอยากให้แจ้งทุกเคสแต่คนละห้อง แก้ตรงไหน
+4. ทำไมต้องคำนวณ Priority ใน Code node ก่อนแยกสาย
 
 ## Next
 
 → [exercises/10-workshop-form-to-workspace-line](../../exercises/10-workshop-form-to-workspace-line/README.md) — ประกอบระบบจริงทั้งสาย
+→ บทถัดไป: [11 — Credential LINE OA](../11-line-oa-credential/README.md)

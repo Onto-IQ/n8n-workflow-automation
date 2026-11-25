@@ -15,18 +15,22 @@
 เรียง agent ต่อกันตามสายการผลิต: Form → **Intent Classifier** → (IF) → **Policy Validator** (มี Vector Store ตรวจนโยบาย) → **Finance Calculator** → **Mail Reviewer** → Output Parser → IF → ส่งอีเมล
 
 - จุดดี: อ่านง่าย ตามได้ แก้จุดเดียวง่าย เหมาะกระบวนการที่ขั้นตอนแน่นอน
-- จุดจำกัด: agent มากกว่า ~20 nodes/6+ agents เริ่มแน่น ไฟล์ยักษ์ ต่อ/แก้ยาก และไม่ยืดหยุ่นต่อเคสที่เส้นทางเปลี่ยน
+- จุดจำกัด: agent มากกว่า ~20 nodes/6+ agents เริ่มแน่น ไฟล์ยักษ์ ต่อ/แก้ยาก และไม่ยืดหยุ่นต่อเคสที่เส้นทางเปลี่ยน — และไม่มี QA วนกลับมาแก้ใหม่
 
 ## แบบ B: Orchestration (2026 Pattern)
 
-Main Agent (Orchestrator) รับงานแล้ว **เรียก sub-workflows ผ่าน toolWorkflow (n8n 2.x)**: Intent Classifier, Policy Validator, Finance Calculator, QA Reviewer — แต่ละตัวเป็น workflow แยกไฟล์ (Sub-Agent เล็ก: Chat Manager + Code Node + Memory + Agent / Loop Code + Gatekeeper + IF + Nodes session | 120+ nodes | 10-12 nodes เหมาะกับสายงาน)
+Main Agent (Orchestrator) รับงานแล้ว **เรียก sub-workflows ผ่าน toolWorkflow (n8n 2.x)**: Intent Classifier, Policy Validator, Finance Calculator, QA Reviewer — แต่ละตัวเป็น workflow แยกไฟล์ (main เหลือราว 10–12 nodes จากเดิม 20+ / 120+ ในไฟล์เดียว) เมื่อ QA ไม่ผ่านจะวนกลับมาแก้ใหม่ได้ (**self-correction**)
 
-- จุดดี: ไฟล์เล็ก รักษาง่าย ส่งต่อทีมได้ ขยายเพิ่ม sub-agent ใหม่ได้โดยไม่แตะ main (แนวทางมาตรฐาน 2026)
+- จุดดี: ไฟล์เล็ก รักษาง่าย ส่งต่อทีมได้ ขยายเพิ่ม sub-agent ใหม่ได้โดยไม่แตะ main (แนวทางมาตรฐาน 2026) — Memory (contextWindowLength 3) + Output Parser + IF gate ช่วยให้ไม่ต้องพึ่ง code node ซับซ้อน
 - จุดพิจารณา: ต้องวางสัญญา input/output ระหว่าง workflow ให้ชัด (sub-agent มี Execute Workflow Trigger รับอินพุต และ Return เป็น output กลับ)
 
 ## ความต่างที่วัดได้จริง (ให้ผู้เรียนวัดเองจาก execution)
 
 - รันเคสเดียวกันทั้งสองแบบ เก็บ **execution data**: จำนวนรอบ, เวลาต่อขั้น, tokens, และพฤติกรรมเมื่อนโยบายไม่ผ่าน (เคสที่นโยบายไม่ผ่าน แล้วเทียบพฤติกรรมสองแบบ) — เป้าหมายของหน่วย: อธิบายผลต่างได้ด้วยข้อมูล ไม่ใช่ความรู้สึก
+
+## Key takeaways
+
+- Linear สำหรับงานง่ายตายตัว / Orchestration เมื่อต้องมี QA + แก้ซ้ำได้
 
 ## ลงมือทำ
 
@@ -37,7 +41,9 @@ Main Agent (Orchestrator) รับงานแล้ว **เรียก sub-w
 1. เคสไหนควรเลือก Linear — เคสไหนควร Orchestration เกณฑ์อะไร
 2. toolWorkflow แก้ปัญหาไฟล์ยักษ์อย่างไร และต้องวางอะไรระหว่าง main กับ sub ให้ชัด
 3. เวลา debug orchestration มอง execution ตรงไหนก่อน (main หรือ sub)
+4. ทำไมแยก sub-agent เป็น sub-workflow ดีกว่าซ้อนกันในไฟล์เดียว
 
 ## Next
 
 → [exercises/23-multi-agents](../../exercises/23-multi-agents/README.md) — รันสองสถาปัตยกรรมแล้วอธิบายผลต่างด้วยข้อมูล
+→ บทถัดไป: [24 — Big Bonus: สร้าง Flow ด้วย Agentic IDE](../24-agentic-ide-bonus/README.md)

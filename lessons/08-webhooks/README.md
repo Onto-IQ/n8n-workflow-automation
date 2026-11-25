@@ -22,12 +22,16 @@ Webhook node มี **สอง URL ต่างกันเสมอ**:
 
 1. เปิด workflow ที่มี Webhook node → กด **Listen for test event**
 2. ยิง request ด้วย curl หรือ Postman ไปที่ Test URL เช่น `curl -X POST <test-url> -H "Content-Type: application/json" -d '{"name":"ชื่อคุณ"}'`
-3. n8n จับ payload → เดิน flow ตามที่ต่อไว้ (ในตัวอย่างคอร์ส: Set สร้างข้อความตอบกลับ → Respond to Webhook ส่งกลับผู้เรียก)
+3. n8n จับ payload → เดิน flow ตามที่ต่อไว้ (ในตัวอย่างคอร์ส: Set สร้างข้อความตอบกลับ เช่น ดึง `{{ $json.body.name }}` มาประกอบข้อความ → Respond to Webhook ส่งกลับผู้เรียก)
 4. **Respond to Webhook node** ตอบกลับผู้ยิงได้เลย (ต้องตั้ง Webhook response mode = Using Respond to Webhook Node)
 
 ## กับดัก HTTPS (สำคัญกับ self-host)
 
-Production webhook ของบริการภายนอก (LINE, Telegram, GitHub) รับเฉพาะ `https://` และฟีเจอร์เบราว์เซอร์ที่ต้อง secure context (chat, notifications) ใช้ได้เฉพาะ HTTPS หรือ localhost — self-host ต้องตั้ง Cloudflare Tunnel ตามหน่วย 25 และตั้ง `WEBHOOK_URL` ใน `.env` ให้เป็น URL เต็ม `https://`
+Production webhook ของบริการภายนอก (LINE, Telegram, GitHub) รับเฉพาะ `https://` และฟีเจอร์เบราว์เซอร์ที่ต้อง secure context (chat, notifications) ใช้ได้เฉพาะ HTTPS หรือ localhost — self-host ต้องตั้ง Cloudflare Tunnel ตามหน่วย 25 และตั้ง `WEBHOOK_URL` ใน `.env` ให้เป็น URL เต็ม `https://` (เตรียมเครื่องดูที่ [SETUP.md](../../SETUP.md))
+
+## Key takeaways
+
+- Test URL กับ Production URL คนละตัวกัน — อย่าสับสนตอน deploy
 
 ## ลงมือทำ
 
@@ -42,3 +46,4 @@ Production webhook ของบริการภายนอก (LINE, Telegram
 ## Next
 
 → [exercises/08-webhooks](../../exercises/08-webhooks/README.md) — รับข้อมูลจากภายนอกด้วย webhook จริง
+→ บทถัดไป: [09 — Credential Google Workspace](../09-google-workspace-credential/README.md)

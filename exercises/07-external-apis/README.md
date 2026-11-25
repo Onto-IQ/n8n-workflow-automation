@@ -15,5 +15,5 @@
 - ดึงมุกจาก public API แล้วส่งต่อด้วย POST
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/07-external-apis/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/07-external-apis/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

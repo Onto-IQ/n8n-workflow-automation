@@ -15,5 +15,5 @@
 - เข้าใจข้อมูลที่ไหลใน n8n ผ่าน workflow สอน JSON
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/03-json-basics/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/03-json-basics/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

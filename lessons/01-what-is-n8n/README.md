@@ -37,7 +37,21 @@ n8n (อ่านว่า "เอ็น-เอท-เอ็น") คือ **wo
 - **Wait Node 2.0** — sub-workflow ที่รอ (เช่น รอ approval) คืนผลลัพธ์สุดท้ายให้ parent ได้ถูกต้อง
 - **ประสิทธิภาพ** — SQLite pooling และ binary data บน filesystem เร็วขึ้นราว 10×
 - **MCP (Model Context Protocol)** — เปิดเครื่องมือของเราให้ AI ตัวอื่นเรียกใช้ (หน่วย 21 และ 24)
-- **Brand refresh** — "Agent-first, Workflow second": AI Agent รับงานก่อน แล้วเสริมด้วย workflow ที่ deterministic เฉพาะจุด สรุปเต็มที่ [other/reference/n8n-2026-rebrand-and-2x.md](../../other/reference/n8n-2026-rebrand-and-2x.md)
+- **Brand refresh** — โลโก้ ฟอนต์ และสีใหม่ ("Intelligence made visible") พร้อมทิศทาง "Agent-first, Workflow second": AI Agent รับงานก่อน แล้วเสริมด้วย workflow ที่ deterministic เฉพาะจุด สรุปเต็มที่ [other/reference/n8n-2026-rebrand-and-2x.md](../../other/reference/n8n-2026-rebrand-and-2x.md)
+- **อื่น ๆ ใน 2.x** — AI Evaluation nodes, Autosave และ Migration Report สำหรับอัปเกรดจาก 1.x มายัง 2.x
+
+## Demo / walkthrough
+
+เปิด n8n แล้วทำตามนี้เพื่อคุ้นมือก่อนลงแล็บ:
+
+1. เปิด n8n → อยู่หน้า **Overview** ศูนย์กลางจัดการ workflow, credentials และ templates
+2. เข้าไปดู **Templates** — คลัง workflow สำเร็จรูปที่หยิบมาต่อยอดได้ทันที
+3. ลองดูวิธีใส่ Activation key ที่ **Billing → Plan & usage**
+
+## Key takeaways
+
+- n8n = orchestrator ที่ต่อทุกอย่างเข้าด้วยกันโดยไม่ต้องพึ่งนักพัฒนา
+- ยุคใหม่ของ n8n คือแพลตฟอร์มของ workflow + AI agents ไม่ใช่แค่ workflow engine
 
 ## ลงมือทำ
 
@@ -52,3 +66,4 @@ n8n (อ่านว่า "เอ็น-เอท-เอ็น") คือ **wo
 ## Next
 
 → [exercises/01-what-is-n8n](../../exercises/01-what-is-n8n/README.md) — ลงมือใช้ n8n ครั้งแรก
+→ บทถัดไป: [02 — เริ่มต้น Workflow แรก](../02-first-workflow/README.md)

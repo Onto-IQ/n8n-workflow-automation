@@ -15,5 +15,5 @@
 - OpenAI credential ใช้งานได้จริงภายในงบที่ตั้ง
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/15-openai-credential/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/15-openai-credential/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

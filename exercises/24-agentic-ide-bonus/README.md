@@ -15,5 +15,5 @@
 - workflow ที่คุณแต่งเองถูกสร้างขึ้นโดย agent ใน IDE
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/24-agentic-ide-bonus/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/24-agentic-ide-bonus/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

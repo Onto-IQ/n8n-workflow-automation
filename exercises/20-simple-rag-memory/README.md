@@ -15,5 +15,5 @@
 - chatbot ตอบจากเอกสารนโยบายจริง + จำบทสนทนา
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/20-simple-rag-memory/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/20-simple-rag-memory/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

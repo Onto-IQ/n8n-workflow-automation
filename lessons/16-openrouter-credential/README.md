@@ -8,18 +8,18 @@
 | อ้างอิง slide | N8N-L1-Onto-IQ-v7 หน้า 151–157 |
 | คู่มือเต็ม | [other/docs/credentials/openrouter-api.md](../../other/docs/credentials/openrouter-api.md) |
 
-OpenRouter คือ "ศูนย์รวมโมเดล AI" — key เดียว เรียกได้ทั้ง Claude, Llama, Meta, รวมถึงโมเดลจาก OpenAI และ Gemini ในอินเทอร์เฟซเดียว เหมาะกับงานที่อยากสลับโมเดล/ลองของใหม่โดยไม่สมัครหลายบริการ และมีโมเดลฟรีให้ทดลอง
+OpenRouter คือ "ศูนย์รวมโมเดล AI" — key เดียว เรียกได้ทั้ง Claude, Llama, Mistral, รวมถึงโมเดลจาก OpenAI และ Gemini ในอินเทอร์เฟซเดียว เหมาะกับงานที่อยากสลับโมเดล/ลองของใหม่โดยไม่สมัครหลายบริการ และมีโมเดลฟรี (`:free`) ให้ทดลอง
 
 ## ขั้นบน openrouter.ai
 
 1. สมัครสมาชิก (Sign in ผ่าน Google หรืออีเมล) → เข้า Dashboard
-2. **เติมเครดิต (ทางเลือก)** — Settings → Credits → Add credit (เติมขั้นต่ำ ~$5 เมื่อจะใช้รุ่นเสียง); โมเดลฟรีใช้ได้โดยไม่ต้องเติม แต่มีโควตา/ข้อจำกัดตามระดับบัญชี
-3. **สร้าง API key** — หน้า Keys → Create Key → ตั้งชื่อ (เช่น "n8n Router Key") → (Optional) ตั้ง Credit limit ต่อ key เพื่อกันใช้เกิน → สร้างแล้ว **คัดลอกเก็บทันที** (แสดงครั้งเดียว)
+2. **เติมเครดิต (ทางเลือก)** — Settings → Credits → Add credit (เติมขั้นต่ำ ~$5 เมื่อจะใช้รุ่นเสียง); ถ้าใช้เฉพาะโมเดลฟรีข้ามขั้นนี้ได้เลย แต่มีโควตา/ข้อจำกัดตามระดับบัญชี
+3. **สร้าง API key** — หน้า Keys → Create Key → ตั้งชื่อ (เช่น "n8n Router Key") → (Optional) ตั้ง Credit limit ต่อ key เช่น $1 เพื่อกันตัวเองใช้เกิน → สร้างแล้ว **คัดลอกเก็บทันที** (แสดงครั้งเดียว key ขึ้นต้น `sk-or-v1-...`)
 
 ## เชื่อมใน n8n
 
 1. สร้าง credential **OpenRouter** → วาง API key
-2. ผูกกับ **OpenRouter Chat Model** node ใน agent → เลือกโมเดล (ฟรี: โมเดลที่ติดป้าย free; เสียง: Claude/GPT/Gemini ตามเครดิต) — เห็นรายการโมเดลโหลดขึ้น = สำเร็จ
+2. ผูกกับ **OpenRouter Chat Model** node ใน agent → เลือกโมเดล (ฟรี: โมเดลที่ติดป้าย free; เสียง: Claude/GPT/Gemini ตามเครดิต) — เห็นรายการโมเดลโหลดขึ้น = สำเร็จ (หรือจะต่อผ่าน OpenAI-compatible endpoint ก็ได้)
 3. สลับโมเดลเพื่อเทียบคุณภาพ/ราคาได้ใน node เดียวโดยไม่แก้ logic
 
 ## ข้อควรระวัง
@@ -27,6 +27,10 @@ OpenRouter คือ "ศูนย์รวมโมเดล AI" — key เด
 - เครดิตหมด = request ล้มเหลวกลาง flow ระวังตอนรันงานจำนวนมาก
 - โมเดลฟรีมีข้อจำกัดเรื่องอัตราและคุณภาพ — เหมาะกับทดลอง ไม่ใช่ production
 - เก็บ key ใน credential เท่านั้น ห้าม commit
+
+## Key takeaways
+
+- OpenRouter เหมาะกับการเทียบโมเดลและทำ fallback ระหว่าง provider — โมเดลเป็นแค่ชิ้นส่วนสลับได้
 
 ## ลงมือทำ
 
@@ -41,3 +45,4 @@ OpenRouter คือ "ศูนย์รวมโมเดล AI" — key เด
 ## Next
 
 → [exercises/16-openrouter-credential](../../exercises/16-openrouter-credential/README.md) — key เดียว เข้าถึงหลายโมเดล
+→ บทถัดไป: [17 — AI Agent คืออะไร](../17-ai-agents-concepts/README.md)

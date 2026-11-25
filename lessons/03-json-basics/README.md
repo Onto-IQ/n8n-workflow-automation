@@ -15,6 +15,8 @@
 { "key": "value", "number": 123, "boolean": true, "array": [1, 2, 3], "object": { "nestedKey": "nestedValue" } }
 ```
 
+อ่านเครื่องหมายให้คล่อง: `{ }` ครอบ 1 item, `:` คั่น key กับ value, ฟันหนู `"` ครอบ string และ `,` คั่นระหว่างคู่ — key เป็น string เสมอ ส่วน value เป็นชนิดใดก็ได้ใน 6 ชนิดด้านล่าง
+
 - **String** — ข้อความในเครื่องหมายคำพูด เช่น `"Hello"`
 - **Number** — ตัวเลข `25`, `99.5`
 - **Boolean** — `true` / `false`
@@ -23,6 +25,8 @@
 - **Null** — ไม่มีค่า
 
 จุดที่มือใหม่สับสนที่สุดคือ **Object กับ Array ต่างกัน**: object เข้าถึงด้วยชื่อ key (`{{ $json.name }}`) ส่วน array เข้าถึงด้วยตำแหน่ง (`{{ $json.items[0] }}`) และ array มักต้องใช้ Split Out node แยกเป็นทีละ item ก่อนประมวลผล (หน่วย 05)
+
+และจำไว้เสมอ: n8n รับข้อมูลเข้าเป็น **list** เสมอ แม้มี item เดียว แล้ววนทำงานซ้ำตามจำนวน item ให้อัตโนมัติ — เพราะอย่างนี้ array จึงเจอบ่อยตลอดทาง
 
 ## อ่าน JSON จาก API จริง
 
@@ -43,9 +47,14 @@
 - `{{ $('Node Name').item.json.field }}` — ดึงจาก node ใดก็ได้โดยชื่อ ใช้เมื่อข้อมูลอยู่ไกลในสาย flow
 - ชื่อ node คือ key ของทุกอย่าง — เปลี่ยนชื่อ node แล้วต้องไล่แก้ expression ที่อ้างถึงด้วย
 
+## Key takeaways
+
+- `"25"` กับ `25` ต่างกัน — n8n แยก string กับ number เสมอ
+- Expression คือพลังของ n8n: เชื่อมโยงข้อมูลระหว่าง node ได้ทุกจุด
+
 ## ลงมือทำ
 
-เปิด [exercises/03-json-basics/LAB.md](../../exercises/03-json-basics/LAB.md) — import `solution/01-Learn-JSON-Basics.json` รันดูข้อมูลจริงของ JSON ทุกประเภท แล้วลองเขียน expression เองใน node สุดท้าย
+เปิด [exercises/03-json-basics/LAB.md](../../exercises/03-json-basics/LAB.md) — import `solution/01-Learn-JSON-Basics.json` รันดูข้อมูลจริงของ JSON ทุกประเภท แล้วลองแก้ expression ใน node สุดท้ายให้ชี้ไป field อื่นด้วยตัวเอง
 
 ## Check understanding
 
@@ -56,3 +65,4 @@
 ## Next
 
 → [exercises/03-json-basics](../../exercises/03-json-basics/README.md) — เจาะ JSON ด้วยข้อมูลจริงบน canvas
+→ บทถัดไป: [04 — Flow Control: IF, Switch, Merge](../04-flow-control/README.md)

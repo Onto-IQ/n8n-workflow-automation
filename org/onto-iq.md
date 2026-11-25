@@ -7,7 +7,7 @@ Onto-IQ เป็นองค์กรกลุ่มหัวข้อ **AI** �
 ## แนวทางทำเนื้อหา
 
 - อ่านง่ายสองภาษา: อธิบายภาษาไทย + คำสั่ง/ชื่อเครื่องมือเป็นอังกฤษ
-- หน่วยแบบ hands-on จับคู่ `LESSON.md` + `LAB.md` ชื่อ `NN-slug` ตรงกันระหว่าง lessons/exercises
+- หน่วยแบบ hands-on จับคู่ `README.md` (บทเรียนครบในไฟล์เดียว) + `LAB.md` ชื่อ `NN-slug` ตรงกันระหว่าง lessons/exercises
 - คอร์ส multi-agent อาจใช้ workshop repo แยก โดย repo นี้เก็บ lessons + exercises
 - deck ของวิทยากรอยู่ `other/slides/` (หรือชี้ path ใน `other/slides/README.md`)
 - ชื่อ case study ไทยได้ใต้ `other/` เช่น `other/datasets/บริษัท สมสมัยงาน AI จำกัด/`

@@ -15,5 +15,5 @@
 - ออกแบบ agent ตัวแรกของคุณบนกระดาษก่อนลงมือ
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/17-ai-agents-concepts/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/17-ai-agents-concepts/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

@@ -8,7 +8,7 @@
 | อ้างอิง slide | N8N-L1-Onto-IQ-v7 หน้า 170–175 |
 | เฉลย | `exercises/19-.../solution/02 - AI Agent with Tools (Function Calling).json` |
 
-LLM เก่งแต่ "พูดอย่างเดียว" — Function Calling ทำให้มัน **ลงมือทำ** เชื่อม tool ให้ agent แล้วมันจะเลือกเรียกเองตามงาน บทนี้สร้าง agent ที่มีมือจริง: ตัวอย่างคอร์สใช้ Calculator (คำนวณแม่น) + Wikipedia (ค้นข้อมูลจริง)
+LLM เก่งแต่ "พูดอย่างเดียว" — Function Calling ทำให้มัน **ลงมือทำ** โมเดลตัดสินใจเองว่าเมื่อไรต้องใช้เครื่องมือภายนอก (คำนวณ, ค้นข้อมูล real-time) แล้วเรียกเองตามงาน บทนี้สร้าง agent ที่มีมือจริง: ตัวอย่างคอร์สใช้ Calculator (คำนวณแม่น) + Wikipedia (ค้นข้อมูลจริง)
 
 ## Function Calling คืออะไร
 
@@ -32,16 +32,23 @@ LLM เก่งแต่ "พูดอย่างเดียว" — Function
 
 **Accuracy** (ลด hallucination ด้วย tool อ้างอิงจริง), **Extended capability** (ต่อ CRM/Database/Weather/HTTP ได้ไม่จำกัด), **Automation** (จาก chatbot สู่ "Digital Worker" ที่ทำงานจริงได้)
 
+## Key takeaways
+
+- agent ที่มี tools คือ digital worker ไม่ใช่แค่แชทบอท
+- ถ้าไม่ใส่ constraint ใน system prompt agent จะย้อนกลับไปเดาคำตอบเอง
+
 ## ลงมือทำ
 
-เปิด [exercises/19-agent-with-tools/LAB.md](../../exercises/19-agent-with-tools/LAB.md) — import `solution/02 - AI Agent with Tools (Function Calling).json` แล้วทดสอบ: ถามโจทย์คำนวณ (ต้องเรียก Calculator), ถามข้อมูลนอกความรู้โมเดล (ต้องเรียก Wikipedia) และดู call log ของ agent
+เปิด [exercises/19-agent-with-tools/LAB.md](../../exercises/19-agent-with-tools/LAB.md) — import `solution/02 - AI Agent with Tools (Function Calling).json` แล้วทดสอบ: ถามโจทย์คำนวณ `(3245 * 12) + 897 = ?` (ต้องเรียก Calculator), ถามข้อมูลนอกความรู้โมเดล `Who founded Apple?` (ต้องเรียก Wikipedia) และดู call log ของ agent
 
 ## Check understanding
 
 1. ทำไมเลขคำนวณจาก Calculator น่าเชื่อกว่าคำตอบจากโมเดล
 2. System prompt ประโยคไหนห้าม agent ตอบโดยไม่เรียก tool
 3. อยากให้ agent อ่านข้อมูลจาก Google Sheets ของบริษัท — เพิ่ม tool แบบไหน
+4. ถ้าลืมใส่ constraint ใน system prompt จะเกิดอะไรขึ้น
 
 ## Next
 
 → [exercises/19-agent-with-tools](../../exercises/19-agent-with-tools/README.md) — สร้าง agent ที่มีมือเรียก tool จริง
+→ บทถัดไป: [20 — Simple RAG + Memory](../20-simple-rag-memory/README.md)

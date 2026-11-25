@@ -15,5 +15,5 @@
 - ติดตั้งและรันระบบรับเรื่องครบวงจรให้ได้จริง
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/10-workshop-form-to-workspace-line/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/10-workshop-form-to-workspace-line/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

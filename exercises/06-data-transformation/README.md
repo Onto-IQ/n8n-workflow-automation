@@ -15,5 +15,5 @@
 - แปลงข้อมูลดิบให้สะอาดพร้อมใช้
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/06-data-transformation/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/06-data-transformation/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

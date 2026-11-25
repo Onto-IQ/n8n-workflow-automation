@@ -32,6 +32,10 @@ LINE Official Account (OA) คือช่องทางลูกค้าห�
 - สองฝั่งต้องพร้อมพร้อมกัน: ฝั่ง LINE เปิด "Use webhook" และฝั่ง n8n workflow active
 - Token หมดอายุ/ถูกออกใหม่ = credential ใช้ไม่ได้ ต้องออกใหม่และวางใหม่
 
+## Key takeaways
+
+- Webhook URL ของ n8n ต้องไปอยู่ฝั่ง LINE ด้วย — สองฝั่งพร้อมพร้อมกันจึงคุยกันได้
+
 ## ลงมือทำ
 
 เปิด [exercises/11-line-oa-credential/LAB.md](../../exercises/11-line-oa-credential/LAB.md) — เดิน console ทีละหน้า ติดตั้ง node, สร้าง credential, และยืนยันว่าข้อความหา OA มาถึง n8n
@@ -45,3 +49,4 @@ LINE Official Account (OA) คือช่องทางลูกค้าห�
 ## Next
 
 → [exercises/11-line-oa-credential](../../exercises/11-line-oa-credential/README.md) — ต่อ LINE OA ให้ n8n ครบสองทาง
+→ บทถัดไป: [12 — สถานการณ์ LLM ปี 2026](../12-llm-landscape/README.md)

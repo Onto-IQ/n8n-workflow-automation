@@ -34,14 +34,20 @@ Trigger คือ node แรกที่ "เริ่ม workflow" ทุก w
 2. แต่ละ node รับ items เข้า ทำงาน แล้วส่ง items ออก
 3. เส้นเชื่อม (connection) กำหนดทิศทาง — แยก branch ได้ (IF, Switch) และรวมกลับได้ (Merge)
 4. **Execute step / Execute workflow** คือปุ่มทดสอบ — รันแล้วดู Input/Output ของแต่ละ node ได้ทันที นี่คือวิธี debug หลักของ n8n
+5. ค่าเริ่มต้นคือรันแบบ **Sequential** — ทีละ node เรียงต่อกันจนจบ ถ้าต้องการให้บางสายทำงานพร้อมกัน (**Parallel**) ต้องตั้งค่าเพิ่ม
+
+## Key takeaways
+
+- ทุก workflow เริ่มที่ trigger เสมอ
+- ตอนทดสอบใช้ Manual trigger ก่อนเสมอ แล้วค่อยเปลี่ยนเป็น trigger จริงเมื่อขึ้นใช้งาน
 
 ## ลงมือทำ: สร้าง "01 - Firstflow"
 
 1. **Add workflow** ใหม่ → คลิก **Add first step…** กลาง canvas
 2. เลือก **Trigger manually**
-3. กด **+** ต่อจาก trigger → ค้นหา **Gmail** → เลือก action **Send a message**
+3. กด **+** ต่อจาก trigger → ค้นหา **Gmail** → เลือก action **Send a message** แล้วกรอก To / Subject / Message
 4. เชื่อม credential (ถ้ายังไม่มี ทำหน่วย 09 ก่อนแล้วกลับมา)
-5. กด **Execute workflow** แล้วเช็กกล่องจดหมาย
+5. กด **Execute workflow** แล้วเช็กกล่องจดหมาย (ดับเบิลคลิก node เพื่อดู Input/Output ที่ไหลผ่าน)
 6. ตั้งชื่อ workflow "01 - Firstflow" แล้ว **Save**
 
 ## Check understanding
@@ -53,3 +59,4 @@ Trigger คือ node แรกที่ "เริ่ม workflow" ทุก w
 ## Next
 
 → [exercises/02-first-workflow](../../exercises/02-first-workflow/README.md) — สร้าง Firstflow ด้วยมือตัวเองแล้วเทียบกับเฉลย
+→ บทถัดไป: [03 — JSON พื้นฐาน](../03-json-basics/README.md)

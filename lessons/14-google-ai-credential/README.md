@@ -26,6 +26,15 @@ Gemini คือโมเดลฟรีที่สมัครง่ายท�
 
 ถ้าต้องการคุม project/billing ระดับองค์กร สร้าง Gemini API key ได้จาก **Google Cloud Console** เช่นกัน (หน้า Welcome → Create Gemini API key หรือ Vertex AI สำหรับสัญญา enterprise) — key ทั้งสองทางเรียก Gemini API ได้เหมือนกัน
 
+## Demo / walkthrough
+
+รีวิว workflow `solution/01 - LINE Chat Gemini Model.json`: ข้อความจาก LINE เข้า AI Agent ชื่อ "จอย" (Gemini 2.5 Flash — persona ตอบสั้น มี emoji) มี **Window Buffer Memory** เก็บ 20 ข้อความล่าสุด **แยกตาม user id** แล้วตอบกลับเข้า LINE — import แล้วทักหาบอทดูจริง
+
+## Key takeaways
+
+- Gemini key ออกฟรีใน Google AI Studio — เหมาะเป็นโมเดลแรกของทั้งคลาส
+- คีย์ที่สร้างแล้ว "หาย" จากหน้าจอไม่ได้แปลว่าพัง — เก็บสำเนาไว้กับตัวเอง อย่ารอ Google โชว์ซ้ำ
+
 ## ลงมือทำ
 
 เปิด [exercises/14-google-ai-credential/LAB.md](../../exercises/14-google-ai-credential/LAB.md) — สร้าง key, ตั้ง credential, และรีวิว workflow `solution/01 - LINE Chat Gemini Model.json` ให้ Gemini ตอบแชท LINE ได้จริง
@@ -35,7 +44,9 @@ Gemini คือโมเดลฟรีที่สมัครง่ายท�
 1. สร้าง key แล้วทำหาย — ทำอย่างไรได้ key ใหม่ และผลต่อ key เดิมอย่างไร
 2. สองทางสร้าง Gemini key (AI Studio กับ Cloud Console) เลือกเมื่อไหร่
 3. ทดสอบ credential สำเร็จ/ไม่สำเร็จ ตรวจจากอะไรใน n8n
+4. Memory ที่แยกตาม user id ทำไมจึงสำคัญกับแชทบอท
 
 ## Next
 
 → [exercises/14-google-ai-credential](../../exercises/14-google-ai-credential/README.md) — ต่อ Gemini ให้ agent แรกของคุณ
+→ บทถัดไป: [15 — Credential OpenAI](../15-openai-credential/README.md)

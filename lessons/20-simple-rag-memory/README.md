@@ -9,13 +9,13 @@
 | เฉลย | `exercises/20-.../solution/03-Simple-RAG-with-Memory.json` |
 | ชุดข้อมูล | [other/datasets/บริษัท สมสมัยงาน AI จำกัด/](../../other/datasets/บริษัท%20สมสมัยงาน%20AI%20จำกัด/) |
 
-โมเดลไม่รู้เอกสารองค์กรของคุณ — **RAG (Retrieval-Augmented Generation)** แก้ด้วยการทำ "ความจำองค์กร": ยิงเอกสารเข้า Vector Store แล้วให้ agent ค้นด้วยความหมาย (ไม่ใช่ค้นคำตรง) แล้วนำข้อความที่เกี่ยวมาตอบ บทนี้สร้าง RAG อย่างง่ายด้วย In-Memory Vector Store จากนโยบายบริษัทตัวอย่าง
+โมเดลไม่รู้เอกสารองค์กรของคุณ — **RAG (Retrieval-Augmented Generation)** แก้ด้วยการทำ "ความจำองค์กร": ดึงข้อมูลที่เกี่ยวข้องจาก knowledge base มาแปะเข้า prompt ก่อนส่งให้ LLM โดยยิงเอกสารเข้า Vector Store แล้วให้ agent ค้นด้วยความหมาย (ไม่ใช่ค้นคำตรง) บทนี้สร้าง RAG อย่างง่ายด้วย In-Memory Vector Store จากนโยบายบริษัทตัวอย่าง
 
 ## RAG ทำงาน 2 ทาง
 
 - **Ingestion (ฝั่งโหลด)** — อ่านไฟล์ → Embeddings node แปลงข้อความเป็น vector → เขียนลง Vector Store
 - **Retrieval (ฝั่งถาม)** — Query Data node ค้นด้วย vector ของคำถาม → ส่ง chunk ที่เกี่ยวเข้า agent เป็นบริบท
-- ทั้งสองทาง **ต้องใช้ embedding model ตัวเดียวกัน** — คนละ model = ค้นไม่เจอ (กับดักที่วางไว้ในคอร์ส ดู [INSTRUCTOR.md](../../other/docs/INSTRUCTOR.md))
+- ทั้งสองทาง **ต้องใช้ embedding model ตัวเดียวกัน** (model/settings เดียวกันทั้ง Insert และ Retrieve) — คนละ model = vector ไม่ตรง ค้นไม่เจอ (กับดักที่วางไว้ในคอร์ส ดู [INSTRUCTOR.md](../../other/docs/INSTRUCTOR.md))
 
 ## ทำไมยุค Context 1M+ ยังต้องมี RAG
 
@@ -30,6 +30,10 @@
 2. **Retriever Flow** — Chat Trigger → AI Agent มี **Simple Memory** + **Query Data Tool** (ให้ agent ค้น Vector Store เองเมื่อจำเป็น) → OpenAI Chat Model สังเคราะห์คำตอบจากข้อมูลจริงในเอกสาร
 3. ทดสอบด้วยคำถามจากนโยบาย เช่น "เบี้ยเลี้ยงไปญี่ปุ่นเท่าไหร่?" — คำตอบต้องอ้างจากเอกสาร
 
+## Key takeaways
+
+- ถาม "เบี้ยเลี้ยงไปญี่ปุ่นเท่าไหร่?" แล้วตามด้วย "แล้วเกาหลีล่ะ?" — agent ต้องรู้จาก memory ว่าคำถามหลังหมายถึงเบี้ยเลี้ยง นี่คือจุดที่ RAG + Memory ทำงานร่วมกัน
+
 ## ลงมือทำ
 
 เปิด [exercises/20-simple-rag-memory/LAB.md](../../exercises/20-simple-rag-memory/LAB.md) — สร้างทั้งสอง flow, โหลดข้อมูล, แล้วถาม-ตอบผ่าน chat ด้วยข้อมูลจากเอกสารจริง
@@ -43,3 +47,4 @@
 ## Next
 
 → [exercises/20-simple-rag-memory](../../exercises/20-simple-rag-memory/README.md) — ทำความจำองค์กรด้วย RAG อย่างง่าย
+→ บทถัดไป: [21 — MCP Client & Server](../21-mcp-client-server/README.md)

@@ -20,5 +20,5 @@
 - รันทั้งสองแบบและอธิบายผลต่างได้ด้วยข้อมูล execution
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/23-multi-agents/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/23-multi-agents/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

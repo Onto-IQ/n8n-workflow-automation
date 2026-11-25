@@ -15,5 +15,5 @@
 - n8n ของคุณรันบนเครื่องคุณ เข้าได้ผ่านโดเมน HTTPS ของตัวเอง
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/25-self-hosting/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/25-self-hosting/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

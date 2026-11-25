@@ -15,5 +15,5 @@
 - สร้าง "01 - Firstflow" ด้วยตัวเอง: Manual Trigger แล้วส่งอีเมลด้วย Gmail
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/02-first-workflow/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/02-first-workflow/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน

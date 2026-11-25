@@ -25,7 +25,6 @@ for l in lessons/*/; do
   n=$((n+1)); s=$(basename "$l")
   echo "$s" | grep -Eq '^[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$' || err "lesson folder must be NN-slug (ASCII): $l"
   [ -f "$l/README.md" ] || err "missing ${l}README.md"
-  [ -f "$l/LESSON.md" ] || err "missing ${l}LESSON.md"
   ex="exercises/$s"
   if [ -d "$ex" ]; then
     [ -f "$ex/README.md" ] || err "missing $ex/README.md"

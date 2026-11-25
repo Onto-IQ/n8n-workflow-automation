@@ -15,5 +15,5 @@
 - ลงมือใช้ n8n ครั้งแรก: เข้าใจหน้าจอ และนำเข้า workflow จาก repo นี้
 
 ## Before you start
-- เรียน lesson คู่กันจบก่อน (หรืออ่าน [LESSON.md](../../lessons/01-what-is-n8n/LESSON.md))
+- เรียน lesson คู่กันจบก่อน (หรืออ่าน [README.md](../../lessons/01-what-is-n8n/README.md))
 - อย่าเปิด `solution/` จนกว่าจะลองเองก่อน
