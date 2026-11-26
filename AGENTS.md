@@ -153,9 +153,11 @@ All 27 units share one file template. Copy an existing unit when adding one.
   `WORKFLOWS_DIR` resolves to `other/workflows`, which no longer exists, so it
   does nothing. If you repoint and re-run it, it rewrites workflow files in
   place and gives new UUIDs to any node it migrates.
-- The real node-schema migration is commit `096cf77`. Commit `8b154da` is titled
+- The real node-schema migration is commit `2146e07`. Commit `572a3b4` is titled
   "Refactor workflow node schemas" but only adds dataset files. The old
-  `workflows/` tree and its READMEs are in history up to `8b154da`.
+  `workflows/` tree and its READMEs are in history up to `572a3b4`. (Hashes
+  changed when the slide decks were purged from history with git-filter-repo;
+  the originals were `096cf77` / `8b154da`.)
 - The docs say there are 18 solution workflows. There are 24.
 - There is no `.gitattributes`. The maintainer's Windows checkout has
   `core.autocrlf=true`, so working-tree text files are mostly CRLF while the
